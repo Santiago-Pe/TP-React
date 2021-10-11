@@ -1,0 +1,49 @@
+header
+{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    background-color: rgb(63, 4, 4);
+
+    font-family: "Quicksand";
+    font-weight: 500;
+}
+.navMain>ul
+{
+    width: auto;
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: center;
+
+    list-style: none; 
+    
+}
+.navMain>li
+{
+    float: left;
+    text-align:center
+}
+.navList li>a
+{
+    color: white;
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    min-width: 100px;
+    
+}
+.navList li>a:hover
+{
+    background-color: rgb(119, 24, 24);
+    border-radius: 5px;
+    
+}
+.dropDowList
+{
+    display: none;
+    
+}
+
