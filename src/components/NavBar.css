@@ -2,7 +2,9 @@ header
 {
     width: 100%;
     height: auto;
-    margin: 0 auto;
+
+    /* margin: 0 auto; */
+
     background-color: rgb(63, 4, 4);
 
     font-family: "Quicksand";
@@ -21,18 +23,23 @@ header
     list-style: none; 
     
 }
-.navMain>li
+/* .navMain>li
 {
     float: left;
     text-align:center
-}
+} */
 .navList li>a
 {
-    color: white;
-    padding: 10px;
     display: block;
-    text-decoration: none;
+
+    padding: 10px;
     min-width: 100px;
+
+    color: white;
+    text-decoration: none;
+    text-align: center;
+
+    cursor: pointer;
     
 }
 .navList li>a:hover
@@ -43,12 +50,10 @@ header
 }
 .dropDowList
 {
-    display: none;
-    
+    display: none;  
 }
 .dropDowList:hover
 {
-    display:block;
-    
+    display:block;  
 }
 
