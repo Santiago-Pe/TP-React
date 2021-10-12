@@ -1,15 +1,8 @@
 import NavBar from "./components/NavBar";
 import './components/NavBar.css';
 
-function App() {
-  const dropDowNav = ()=>
-  {
-      let dropDowList = document.getElementsByClassName("dropDow");
-      dropDowList.onClick("click", ()=>
-      {
-          
-      });
-  }  
+function App() 
+{
   return (
     <div className="Nav">
     <NavBar/>   
