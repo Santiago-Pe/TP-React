@@ -1,24 +1,27 @@
+
 const NavBar = () => 
 {
     return (
     // Cambiar los links de los "a" cuando esten las paginas creadas
         <header>
-            <nav className = "navMain">
-                <ul className = "navList">
-                    <li><a href="../public/index">Inicio</a></li>
-                    <li><a className="dropDown" href="../public/index">Bebidas</a>
-                        <ul className="dropDowList">
-                            <li><a href="../public/index">Vinos</a></li>
-                            <li><a href="../public/index">Whiskys</a></li>
-                            <li><a href="../public/index">Licores</a></li>
-                            <li><a href="../public/index">Vermut</a></li>
-                            <li><a href="../public/index">Vodkas</a></li>
-                        </ul>  
-                    </li>
-                    <li><a href="../public/index">Contacto</a></li>
+            <nav>
+                <ul>
+                    <li><a href="">Inicio</a></li>
+                    <li><a href="">Productos</a>
+                        <ul>
+                            <li><a href="">Vinos</a></li>
+                            <li><a href="">Vermuts</a></li>
+                            <li><a href="">Vodkas</a></li>
+                            <li><a href="">Gines</a></li>
+                            <li><a href="">Licores</a></li>
+                            <li><a href="">Whiskys</a></li>
+                        </ul>
+                    </li>    
+                    <li><a href="">Contacto</a></li>
+                    <li><a href="">Quienes somos</a></li>
                 </ul>
-        </nav>
-    </header>
+            </nav>
+        </header>
     )
     
 }
