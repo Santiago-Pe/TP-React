@@ -1,3 +1,4 @@
+import CartWidget from "./CartWidget"
 export const TituloH1 = ({nombreTitulo}) =>
 {
     return(
@@ -26,6 +27,11 @@ const NavBar = () =>
                     </li>    
                     <li><a href="">Contacto</a></li>
                     <li><a href="">Quienes somos</a></li>
+                    <div className="boxCartWidget">    
+                        <li><a href="">Carrito</a>
+                            <CartWidget/>
+                        </li>
+                    </div>    
                 </ul>
             </nav>
             <TituloH1 nombreTitulo="Club Cup"/>

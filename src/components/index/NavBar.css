@@ -61,6 +61,14 @@
     visibility: visible;
     opacity: 1;
 }
+.boxCartWidget
+{
+    display: flex;
+}
+.cartWidget
+{
+    color: white;
+}
 /* Titulo Principal */
 .title
 {
