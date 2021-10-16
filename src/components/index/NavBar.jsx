@@ -21,6 +21,7 @@ const NavBar = () =>
                             <li><a href="">Gines</a></li>
                             <li><a href="">Licores</a></li>
                             <li><a href="">Whiskys</a></li>
+                            <li><a href="">Champagne</a></li>
                         </ul>
                     </li>    
                     <li><a href="">Contacto</a></li>
