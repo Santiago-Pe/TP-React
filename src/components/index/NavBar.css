@@ -9,6 +9,17 @@
 {
     list-style: none;
 }
+.boxNavbar
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
 .navbarMain > li
 {
     position: relative;
@@ -68,6 +79,8 @@
 .cartWidget
 {
     color: white;
+    width: 60px;
+    height: 30px;
 }
 /* Titulo Principal */
 .title
