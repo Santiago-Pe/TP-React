@@ -1,0 +1,94 @@
+/* Menu de navegacion */
+.navbar
+{
+    width: 100%;
+    height: auto;
+    background-color: #600707;
+}
+.navbar ul
+{
+    list-style: none;
+}
+.boxNavbar
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.navbarMain > li
+{
+    position: relative;
+    display: inline-block;
+}
+.navbarMain > li > a
+{
+    display: block;
+    padding: 1rem 1.5rem;
+
+    color: white;
+    font-family: "Quicksand";
+    text-decoration: none;
+}
+.navbarMain > li > a:hover
+{
+    background-color: #852e2e;
+    border-radius: 8px;
+    transition: all .3s;
+}
+
+/* SubMenu */
+.subNavbarMain
+{
+    position: absolute;
+    background-color: #bfbfbf;
+    width: 105%;
+    border-radius: 8px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s;
+}
+.subNavbarMain li a 
+{
+    display: block;
+    padding: 0.5rem;
+    color: #600707;
+    font-family: "Quicksand";
+    text-decoration: none;   
+}
+.subNavbarMain li a:hover
+{
+    background-color: #979797;
+    border-radius: 8px;
+    transition: all .3s;
+}
+
+.navbarMain li:hover .subNavbarMain
+{
+    visibility: visible;
+    opacity: 1;
+}
+.boxCartWidget
+{
+    display: flex;
+}
+.cartWidget
+{
+    color: white;
+    width: 60px;
+    height: 30px;
+}
+/* Titulo Principal */
+.title
+{
+    font-family: "Rubik";
+    font-weight: 700;
+    font-size: 50px;
+
+    text-align: center;
+    margin-top: 2rem;
+}
