@@ -1,8 +1,8 @@
-import CartWidget from "../CartWidget"
-export const TituloH1 = ({nombreTitulo}) =>
+import CartWidget from "./CartWidget"
+export const TituloH1 = (props) =>
 {
     return(
-        <h1 className= "title">{nombreTitulo}</h1>
+        <h1 className= "title">{props.title}</h1>
     )
 }
 
@@ -36,7 +36,7 @@ const NavBar = () =>
                     </div>    
                 </ul>
             </nav>
-            <TituloH1 nombreTitulo="Club Cup"/>
+            <TituloH1 title="Club Cup"/>
         </header>
     )
     
