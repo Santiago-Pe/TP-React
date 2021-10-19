@@ -1,5 +1,5 @@
-import NavBar from "./components/NavBar";
-import './components/NavBar.css';
+import NavBar from "./components/NavBar/NavBar";
+import './components/NavBar/NavBar.css';
 import ItemListContainer from "./components/ItemListContainer"
 
 function App() 
