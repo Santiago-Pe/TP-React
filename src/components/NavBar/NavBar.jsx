@@ -1,4 +1,4 @@
-import CartWidget from "./CartWidget"
+import CartWidget from "./NavBar/CartWidget"
 export const TituloH1 = (props) =>
 {
     return(
