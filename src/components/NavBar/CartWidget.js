@@ -1,9 +1,9 @@
 import { BsCart4 } from "react-icons/bs";
 
-const CartWidget = () =>
+const CartWidget = (props) =>
 {
     return(
-        <BsCart4 className = "cartWidget"/>
+        <BsCart4 className={props.className}/>
     )
 }
 

@@ -8,3 +8,181 @@ body
 {
 	background: #ebe7d8;
 }
+/* ICONS */
+.cartWidget.white 
+{
+    color: white ;
+   
+}
+.cartWidget.sizeL
+{
+    width: 60px;
+    height: 30px;
+}
+.cartWidget.black
+{
+    color: black;
+}
+.cartWidget.sizeM
+{
+    width: 45px;
+    height: 35px;
+}
+
+.iconAdd
+{
+    color: white;
+
+}
+
+.iconRemove
+{
+    color: white;
+   
+}
+
+/* ---------------------------------------------------------------------------------------------- */
+
+/* NAVBAR */
+.navbar
+{
+    width: 100%;
+    height: auto;
+    background-color: #600707;
+}
+.navbar ul
+{
+    list-style: none;
+}
+.boxNavbar
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.navbarMain > li
+{
+    position: relative;
+    display: inline-block;
+}
+.navbarMain > li > a
+{
+    display: block;
+    padding: 1rem 1.5rem;
+
+    color: white;
+    font-family: "Quicksand";
+    text-decoration: none;
+}
+.navbarMain > li > a:hover
+{
+    background-color: #852e2e;
+    border-radius: 8px;
+    transition: all .3s;
+}
+
+/* SubMenu */
+.subNavbarMain
+{
+    position: absolute;
+    background-color: #bfbfbf;
+    width: 105%;
+    border-radius: 8px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s;
+}
+.subNavbarMain li a 
+{
+    display: block;
+    padding: 0.5rem;
+    color: #600707;
+    font-family: "Quicksand";
+    text-decoration: none;   
+}
+.subNavbarMain li a:hover
+{
+    background-color: #979797;
+    border-radius: 8px;
+    transition: all .3s;
+}
+
+.navbarMain li:hover .subNavbarMain
+{
+    visibility: visible;
+    opacity: 1;
+}
+.boxCartWidget
+{
+    display: flex;
+}
+
+/* BOTONES */
+.buttonCartW
+{ 
+    width: 40px;
+    height: 25px;
+    
+    text-align: center;
+    border-radius: 6px;
+    background-color: #920f0f;;
+}
+
+/* ---------------------------------------------------------------------------------------------- */
+
+/* CARTDWIDGET SUMAR-RESTAR */
+.buttonCWgeneral
+{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.buttonCartWidgetBox
+{
+    margin-top:0.8rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:  center;
+    align-content: space-around;
+}
+.countBox
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: white;
+    border-radius: 6px;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+
+    padding: 0.5rem;
+
+}
+.countBox > hr
+{
+    width: 100%;
+}
+
+/* ---------------------------------------------------------------------------------------------- */
+
+
+/* TITULOS HN */
+.title
+{
+    font-family: "Rubik";
+    font-weight: 700;
+    font-size: 50px;
+
+    text-align: center;
+    margin-top: 2rem;
+}
