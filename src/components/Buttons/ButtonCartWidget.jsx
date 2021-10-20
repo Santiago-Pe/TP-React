@@ -3,6 +3,8 @@ import IconAdd from "./IconAdd"
 import IconRemove from "./IconRemove"
 import CartWidget from "../NavBar/CartWidget"
 import TituloH4 from "../Ttiles/TitleH4"
+import TituloH3 from "../Ttiles/TitleH3"
+
 
 const ButtonsCartWidget = () =>
 {   
@@ -19,10 +21,10 @@ const ButtonsCartWidget = () =>
 
     return(
         <div className ="buttonCWgeneral">
-            <h3>Carrito de compras</h3>
+            <TituloH3 className="titleH3" title="Carriot de Carga"/>
             <div className="buttonCartWidgetBox">    
                 <button className="buttonCartW" onClick = {addCartWidget}>
-                    <IconAdd/>
+                    <IconAdd />
                 </button>
                 <div className="countBox">
                     <CartWidget className="cartWidget black sizeM"/>

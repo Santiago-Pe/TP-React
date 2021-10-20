@@ -31,7 +31,7 @@ const NavBar = () =>
                     </div>    
                 </ul>
             </nav>
-            <TituloH1 title="Club Cup"/>
+            <TituloH1 className ="titleH1" title="Club Cup"/>
         </header>
     )
     
