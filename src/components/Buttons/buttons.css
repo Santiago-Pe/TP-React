@@ -1,19 +1,14 @@
-.buttonCartWidgetBox
-{
-    display: flex;
-}
+/* ICONS */
 .iconAdd
 {
-    color: black;
-    width: 60px;
-    height: 30px;
+    color: white;
+
 }
 
 .iconRemove
 {
-    color: black;
-    width: 60px;
-    height: 30px;
+    color: white;
+   
 }
 
 .iconCartWidget
@@ -21,5 +16,54 @@
     color: black;
     width: 60px;
     height: 30px;
+    margin-bottom: 0.5rem;
+}
+
+
+/* BUTTONS */
+.buttonCWgeneral
+{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.buttonCartWidgetBox
+{
+    margin-top:0.8rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:  center;
+    align-content: space-around;
+}
+.countBox
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: white;
+    border-radius: 6px;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+
+    padding: 0.5rem;
+
+}
+.countBox > hr
+{
+    width: 100%;
+}
+.buttonCartW
+{ 
+    width: 40px;
+    height: 25px;
+    
+    text-align: center;
+    border-radius: 6px;
+    background-color: #920f0f;;
 }
 
