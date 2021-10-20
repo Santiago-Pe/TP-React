@@ -1,4 +1,25 @@
-.buttonAdd
+.buttonCartWidgetBox
 {
-    
+    display: flex;
 }
+.iconAdd
+{
+    color: black;
+    width: 60px;
+    height: 30px;
+}
+
+.iconRemove
+{
+    color: black;
+    width: 60px;
+    height: 30px;
+}
+
+.iconCartWidget
+{
+    color: black;
+    width: 60px;
+    height: 30px;
+}
+
