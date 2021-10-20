@@ -1,9 +1,9 @@
-import { BsFillCartFill } from "react-icons/bs";
+import { BsCart4 } from "react-icons/bs";
 
 const CartWidget = () =>
 {
     return(
-        <BsFillCartFill className = "cartWidget"/>
+        <BsCart4 className = "cartWidget"/>
     )
 }
 
