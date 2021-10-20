@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import IconAdd from "./IconAdd"
 import IconRemove from "./IconRemove"
-import IconCartWidget from "./IconCartWidget"
+import CartWidget from "../NavBar/CartWidget"
+import TituloH4 from "../Ttiles/TitleH4"
 
 const ButtonsCartWidget = () =>
 {   
@@ -24,9 +25,9 @@ const ButtonsCartWidget = () =>
                     <IconAdd/>
                 </button>
                 <div className="countBox">
-                    <IconCartWidget/>
+                    <CartWidget className="cartWidget black sizeM"/>
                     <hr />
-                    <h4>{count}</h4>
+                    <TituloH4 className="titleH4" title={count}/>
                 </div>
 
                 <button className="buttonCartW" onClick = {removeCartWidget}>
