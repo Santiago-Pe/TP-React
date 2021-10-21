@@ -1,6 +1,5 @@
 import bannerUno from "../assets/img/bannerUno.png";
-import BannerImg from "./BannerImg";
-import CuadrodeTexto from "./CuadrodeTexto";
+import Img from "../Banner/Img"
 import TitleH3 from "../Ttiles/TitleH3";
 
 const DBanner = (props) =>
@@ -9,7 +8,7 @@ const DBanner = (props) =>
 
         <div>
             <div className="containerDbaner">
-                <BannerImg src={bannerUno} alt="Imagenes de bebidas" className="imgBanner"/>
+                <Img src={bannerUno} alt="Imagenes de bebidas" className="imgBanner"/>
                 <div className="textBox">
                     <TitleH3 className="titleH3" title="Ven a visitarnos!"/>
                     <hr/>
