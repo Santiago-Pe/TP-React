@@ -1,5 +1,5 @@
 
-const BannerImg= (prop) =>
+const Img= (prop) =>
 {
     return(
         <img src={prop.src} alt={prop.alt} className={prop.className}/>
@@ -8,4 +8,4 @@ const BannerImg= (prop) =>
     
 }
 
-export default BannerImg
+export default Img

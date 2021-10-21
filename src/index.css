@@ -80,7 +80,7 @@ body
 {
     background-color: #9b2424;
     border-radius: 8px;
-    transition: all .3s;
+    transition: all .10s;
 }
 
 /* SubMenu */
@@ -147,17 +147,6 @@ body
 /* ---------------------------------------------------------------------------------------------- */
 
 /* CARTDWIDGET SUMAR-RESTAR */
-.containerButtonCw
-{
-    margin-top: 2rem;
-
-    font-family: "Quicksand";
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-}
 .buttonCartWidgetBox
 {
     margin-top:0.8rem;
@@ -229,7 +218,7 @@ body
 }
 .containerDbaner  img
 {
-    height: 90vh;
+    height: 80vh;
     width: auto;
 }
 .textBox

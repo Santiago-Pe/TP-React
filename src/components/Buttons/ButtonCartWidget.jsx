@@ -34,8 +34,6 @@ const ButtonsCartWidget = ({initial, stock}) =>
     };
 
     return(
-        <div className ="containerButtonCw">
-            <TituloH3 className="titleH3" title="Carriot de Carga"/>
             <div className="buttonCartWidgetBox">    
                 <button className="buttonCartW btnSimbol" onClick = {removeCartWidget}>
                     -
@@ -47,7 +45,6 @@ const ButtonsCartWidget = ({initial, stock}) =>
                     +
                 </button>
             </div>
-        </div>    
     )
 }
 
