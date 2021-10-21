@@ -1,9 +1,9 @@
-const CuadrodeTexto = (props) =>
-{
-    return(
-        <p className={props.className}>{props.text}</p>
+// const CuadrodeTexto = (props) =>
+// {
+//     return(
+//         <p className={props.className}>{props.text}</p>
         
-    )
-}
+//     )
+// }
 
-export default CuadrodeTexto
+// export default CuadrodeTexto

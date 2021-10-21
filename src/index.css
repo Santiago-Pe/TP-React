@@ -25,8 +25,8 @@ body
 }
 .cartWidget.sizeL
 {
-    width: 60px;
-    height: 30px;
+    width: 80px;
+    height: 40px;
 }
 .cartWidget.black
 {
@@ -202,7 +202,7 @@ body
 {
     font-family: "Quicksand";
     text-align: center;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 700;
     color:black;
 }
@@ -212,5 +212,41 @@ body
     text-align: center;
     font-size: 20px;
     font-weight: 600;
+    color:black;
+}
+
+/* ---------------------------------------------------------------------------------------------- */
+
+/* BANNER */
+.containerDbaner
+{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.containerDbaner  img
+{
+    height: 90vh;
+    width: auto;
+}
+.textBox
+{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    align-items: stretch;
+    justify-content: center;
+
+    margin: 1rem;
+}
+.text
+{
+    font-family: "Quicksand";
+    text-align: left;
+    font-size: 30px;
+    font-weight: 500;
     color:black;
 }

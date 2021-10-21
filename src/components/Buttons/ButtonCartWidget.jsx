@@ -4,15 +4,15 @@ import TituloH3 from "../Ttiles/TitleH3"
 
 
 
-const ButtonsCartWidget = (props) =>
+const ButtonsCartWidget = ({initial, stock}) =>
 {   
     const [count , setCount] = useState (1);
 
     const addCartWidget = () =>
     {
-        if (count == 20)
+        if (count == stock)
         {
-            return 20
+            return stock
         }
         else
         {
@@ -23,9 +23,9 @@ const ButtonsCartWidget = (props) =>
     };
     const removeCartWidget = () =>
     {
-        if(count == 1 )
+        if(count == initial )
         {
-            return count
+            return initial
         }
         else
         {
