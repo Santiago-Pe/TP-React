@@ -8,6 +8,11 @@ body
 {
 	background: #e6e6e6;
 }
+/* IMAGENES */
+.imgBanner
+{
+    margin-right: 1rem;
+}
 /* ICONS */
 .cartWidget
 {
