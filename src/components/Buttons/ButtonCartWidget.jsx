@@ -1,39 +1,50 @@
 import React, {useState} from "react";
-import IconAdd from "./IconAdd"
-import IconRemove from "./IconRemove"
-import CartWidget from "../NavBar/CartWidget"
 import TituloH4 from "../Ttiles/TitleH4"
 import TituloH3 from "../Ttiles/TitleH3"
 
 
-const ButtonsCartWidget = () =>
+
+const ButtonsCartWidget = (props) =>
 {   
-    const [count , setCount] = useState (0);
+    const [count , setCount] = useState (1);
 
     const addCartWidget = () =>
     {
-        setCount(count + 1);
+        if (count == 20)
+        {
+            return 20
+        }
+        else
+        {
+            setCount(count + 1);
+        }
+
+      
     };
     const removeCartWidget = () =>
     {
-        setCount(count - 1);
+        if(count == 1 )
+        {
+            return count
+        }
+        else
+        {
+            setCount(count - 1);
+        }    
     };
 
     return(
-        <div className ="buttonCWgeneral">
+        <div className ="containerButtonCw">
             <TituloH3 className="titleH3" title="Carriot de Carga"/>
             <div className="buttonCartWidgetBox">    
-                <button className="buttonCartW" onClick = {addCartWidget}>
-                    <IconAdd />
+                <button className="buttonCartW btnSimbol" onClick = {removeCartWidget}>
+                    -
                 </button>
                 <div className="countBox">
-                    <CartWidget className="cartWidget black sizeM"/>
-                    <hr />
                     <TituloH4 className="titleH4" title={count}/>
                 </div>
-
-                <button className="buttonCartW" onClick = {removeCartWidget}>
-                    <IconRemove/>
+                <button className="buttonCartW btnSimbol" onClick = {addCartWidget}>
+                    +
                 </button>
             </div>
         </div>    

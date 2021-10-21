@@ -9,7 +9,7 @@ function App()
   return (
     <div className="Nav">
     <NavBar/>  
-    <ButtonCartWidget/>
+    <ButtonCartWidget stock={10} initial={1}/>
     {/* <GetFetch/> */}
     </div>
   );
