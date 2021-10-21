@@ -14,9 +14,11 @@ const NavBar = () =>
                         </a>        
                     </div>  
                     <div className = "navbarMain" >
+                        {/* ver de hacer con map */}
                         <li><a href="">Inicio</a></li>
                         <li><a href="">Productos</a>
                             <ul className = "subNavbarMain">
+                                {/* ver de hacer con map */}
                                 <li><a href="">Vinos</a></li>
                                 <li><a href="">Vermuts</a></li>
                                 <li><a href="">Vodkas</a></li>
