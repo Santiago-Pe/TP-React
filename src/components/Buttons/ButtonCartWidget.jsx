@@ -32,19 +32,28 @@ const ButtonsCartWidget = ({initial, stock}) =>
             setCount(count - 1);
         }    
     };
+    const addToCartFinally = ()=>
+    {
+        console.log(`Se han agregado ${count} de productos al carrito`)
+    }
 
     return(
+        <div className="containerAddToCart">
             <div className="buttonCartWidgetBox">    
                 <button className="buttonCartW btnSimbol" onClick = {removeCartWidget}>
                     -
                 </button>
                 <div className="countBox">
                     <TituloH4 className="titleH4" title={count}/>
+                    <button className="addToCartW" onClick={addToCartFinally}>
+                        Añadir al Carrito
+                    </button>
                 </div>
                 <button className="buttonCartW btnSimbol" onClick = {addCartWidget}>
                     +
                 </button>
             </div>
+        </div>    
     )
 }
 
