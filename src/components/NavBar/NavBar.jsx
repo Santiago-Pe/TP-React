@@ -7,7 +7,12 @@ const NavBar = () =>
     // Cambiar los links de los "a" cuando esten las paginas creadas
         <header>
             <nav className="navbar">
-                <ul className = "boxNavbar">
+                <ul className = "boxNavbar">   
+                    <div className="boxCartWidget">    
+                        <a href="">
+                            <CartWidget className="cartWidget white sizeL"/>
+                        </a>        
+                    </div>  
                     <div className = "navbarMain" >
                         <li><a href="">Inicio</a></li>
                         <li><a href="">Productos</a>
@@ -23,15 +28,10 @@ const NavBar = () =>
                         </li>    
                         <li><a href="">Contacto</a></li>
                         <li><a href="">Quienes somos</a></li>
-                    </div>    
-                    <div className="boxCartWidget">    
-                        <a href="">
-                            <CartWidget className="cartWidget white sizeL"/>
-                        </a>        
-                    </div>    
+                    </div>   
                 </ul>
             </nav>
-            <TituloH1 className ="titleH1" title="Club Cup"/>
+            <TituloH1 className ="titleH1" title="Vineria Online"/>
         </header>
     )
     
