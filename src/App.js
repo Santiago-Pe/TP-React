@@ -1,16 +1,18 @@
 import NavBar from "./components/NavBar/NavBar";
-import ButtonCartWidget from "./components/Buttons/ButtonCartWidget";
-// import GetFetch from "./components/p romises/Promise";
-
-// import ButtonCartWidget from "./components/Buttons/ButtonCartWidget"
+import DBanner from "./components/Banner/Dbanner";
+// import ButtonCartWidget from "./components/Buttons/ButtonCartWidget";
+// import bannerUno from "./components/assets/img/bannerUno.png"
+// import BannerImg from "./components/Banner/BannerImg";
 
 function App() 
 {
   return (
     <div className="Nav">
     <NavBar/>  
-    <ButtonCartWidget stock={10} initial={1}/>
-    {/* <GetFetch/> */}
+    <DBanner/>
+    {/* <ButtonCartWidget stock={10} initial={1}/> */}
+    {/* <BannerImg src= {bannerUno} alt="Imagenes de Bebidas" className="imgBanner"/> */}
+
     </div>
   );
 }
