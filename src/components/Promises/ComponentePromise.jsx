@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import getFetch from "../services/getFetch";
-import  ButtonCartWidget from "../Buttons/ButtonCartWidget"
+import  ButtonCartWidget from "../Buttons/ButtonCartWidget";
 
 
 
@@ -9,24 +9,26 @@ import  ButtonCartWidget from "../Buttons/ButtonCartWidget"
 const ComponentePromise = () =>
 {
   const [product, setProduct] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  getFetch
-  .then( res =>
+  useEffect (()=>
     {
-    console.log(res)
-    setProduct(res)
-    }
-  )
-  .catch(err => console.log(err))
-  .finally(() => console.log('Esto se ejecuta si o si'))
-
-  console.log(product)
+        getFetch
+          .then( res =>
+            {
+            console.log('Llamada a la API')
+            setProduct(res)
+            }
+          )
+          .catch(err => console.log(err))
+          .finally(() => setLoading((false)))
+    }, [])
 
   return(
     <div>
       <h2 className="titleH2">Categorias de productos</h2>
       <div className="containerGeneralCard">
-          {
+      { loading ? <h3 className="titleH3">Cargando..</h3> : 
             product.map(prod=> <div key={prod.id} className="containerList">
                                   {/* <div className="boxCardUnity">  */}
                                       <div className="cardBody">
@@ -45,7 +47,7 @@ const ComponentePromise = () =>
                                     {/* </div>   */}
                                 </div>
             )             
-          }
+          }    
       </div>
     </div>
   )

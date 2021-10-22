@@ -34,8 +34,8 @@ const ButtonsCartWidget = ({initial, stock}) =>
     };
     const addToCartFinally = ()=>
     {
-        console.log(`Se han agregado ${count} de productos al carrito`)
-    }
+        alert(`Se han agregado ${count} de productos al carrito`);
+    };
 
     return(
         <div className="containerAddToCart">
