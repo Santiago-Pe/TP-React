@@ -1,4 +1,4 @@
-import Img from "../Banner/Img"
+import Img from "../ListContainer/Img"
 import JackDaniels from "../assets/img/JackDaniels.png"
 import JackDanielsHoney from "../assets/img/JackDanielsHoney.png"
 import ChivasRegal from "../assets/img/ChivasRegal.png"
