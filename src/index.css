@@ -139,7 +139,7 @@ body
 }
 .buttonCartW:hover
 {
-    background-color:  #992121;
+    background-color:  #600707;
     color: white;
 }
 .btnSimbol
@@ -165,8 +165,7 @@ body
 }
 .addToCartW:hover
 {
-    background-color:  #992121;
-    
+    background-color:  #600707;
 }
 /* ---------------------------------------------------------------------------------------------- */
 
@@ -211,6 +210,18 @@ body
     text-align: center;
     margin-top: 2rem;
 }
+.titleH2
+{
+    font-family: "Quicksand";
+    font-weight: 700;
+    font-size: 2rem;
+	
+	color:black;
+
+    text-align: center;
+    margin-top: 2rem; 
+    margin-bottom: 2rem;
+}
 .titleH3
 {
     font-family: "Quicksand";
@@ -221,6 +232,8 @@ body
 }
 .titleH4
 {
+
+    
     font-family: "Quicksand";
     text-align: center;
     font-size: 20px;
@@ -262,4 +275,51 @@ body
     font-size: 30px;
     font-weight: 500;
     color:black;
+}
+
+/* ---------------------------------------------------------------------------------------------- */
+
+/* CARDS PROMISE */
+.containerGeneralCard
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.containerList
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+    font-family: "Quicksand";
+    color:black;
+    background-color: white;
+
+    border-radius: 10px;
+}
+
+.cardHeader
+{
+    font-weight: 700;
+    font-size: 25px;
+}
+.cardBody
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cardBody > .imgCard
+{
+    width: 20vw;
+    height: 40vh;
+    margin: 0.2rem;
+}
+.cardFooter
+{
+    text-align: justify;
 }

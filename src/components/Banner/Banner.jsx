@@ -1,8 +1,8 @@
 import bannerUno from "../assets/img/bannerUno.png";
-import Img from "../Banner/Img"
+import Img from "./Img"
 import TitleH3 from "../Ttiles/TitleH3";
 
-const DBanner = (props) =>
+const Banner = (props) =>
 {
     return(
 
@@ -19,9 +19,9 @@ const DBanner = (props) =>
                     </p>
                 </div>
             </div>
-            <button>Productos</button>
+            {/* <button>Productos</button> */}
             <hr/>
         </div>    
 )}
 
-export default DBanner
+export default Banner
