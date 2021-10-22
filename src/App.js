@@ -1,6 +1,6 @@
 import NavBar from "./components/NavBar/NavBar";
-import DBanner from "./components/Banner/Dbanner";
-import ButtonCartWidget from "./components/Buttons/ButtonCartWidget";
+import Banner from "./components/Banner/Banner";
+import ComponentePromise from "./components/Promises/ComponentePromise";
 
 
 // import bannerUno from "./components/assets/img/bannerUno.png"
@@ -11,8 +11,8 @@ function App()
   return (
     <div className="Nav">
     <NavBar/>  
-    <DBanner/>
-    <ButtonCartWidget stock={15} initial={1}/>
+    <Banner/>
+    <ComponentePromise/>
     </div>
   );
 }
