@@ -41,8 +41,9 @@ const ComponentePromise = () =>
                                         <br/>
                                         ${prod.precio}
                                       </div>
+                                      <hr/>
                                       <div className="buttonCard">
-                                      <ButtonCartWidget stock={15} initial={1}/>
+                                      <ButtonCartWidget stock={prod.stock} initial={1}/>
                                       </div>
                                     {/* </div>   */}
                                 </div>
