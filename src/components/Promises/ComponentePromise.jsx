@@ -28,27 +28,24 @@ const ComponentePromise = () =>
     <div>
       <h2 className="titleH2">Categorias de productos</h2>
       <div className="containerGeneralCard">
-      { loading ? <h3 className="titleH3">Cargando..</h3> : 
-            product.map(prod=> <div key={prod.id} className="containerList">
-                                  {/* <div className="boxCardUnity">  */}
-                                      <div className="cardBody">
-                                        {prod.img}
-                                      </div>
-                                      <div className="cardFooter">
-                                        <h4 className="titleH4">{prod.name}</h4>
-                                        <hr />
-                                        {prod.descriptio}
-                                        <br/>
-                                        ${prod.precio}
-                                      </div>
-                                      <hr/>
-                                      <div className="buttonCard">
-                                      <ButtonCartWidget stock={prod.stock} initial={1}/>
-                                      </div>
-                                    {/* </div>   */}
-                                </div>
-            )             
-          }    
+        { loading ? <h3 className="titleH3">Cargando..</h3> : 
+              product.map(prod=> <div key={prod.id} className="containerList">
+                                    <div className="cardBody">
+                                      {prod.img}
+                                    </div>
+                                    <div className="cardFooter">
+                                      <h4 className="titleH4">{prod.name}</h4>
+                                      <hr />
+                                      {prod.descriptio}
+                                      <br/>
+                                      ${prod.precio}
+                                    </div>
+                                    <div className="buttonCard">
+                                    <ButtonCartWidget stock={prod.stock} initial={1}/>
+                                    </div>
+                                  </div>
+              )             
+        }    
       </div>
     </div>
   )

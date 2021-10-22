@@ -2,7 +2,7 @@ import bannerUno from "../assets/img/bannerUno.png";
 import Img from "./Img"
 import TitleH3 from "../Ttiles/TitleH3";
 
-const Banner = (props) =>
+const ItemListContainer = (props) =>
 {
     return(
 
@@ -24,4 +24,4 @@ const Banner = (props) =>
         </div>    
 )}
 
-export default Banner
+export default ItemListContainer
