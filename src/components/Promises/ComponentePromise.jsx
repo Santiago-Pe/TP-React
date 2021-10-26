@@ -1,15 +1,13 @@
 import { useEffect, useState } from "react";
 import getFetch from "../services/getFetch";
 import  ButtonCartWidget from "../Buttons/ButtonCartWidget";
-
-
-
+import Img from "../ListContainer/Img"
 
 
 const ComponentePromise = () =>
 {
   const [product, setProduct] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true); //este ver que onda
 
   useEffect (()=>
     {
@@ -31,7 +29,7 @@ const ComponentePromise = () =>
         { loading ? <h3 className="titleH3">Cargando..</h3> : 
               product.map(prod=> <div key={prod.id} className="containerList">
                                     <div className="cardBody">
-                                      {prod.img}
+                                    <Img src={prod.img} alt="Imagenes de bebidas" className="imgCard"/>
                                     </div>
                                     <div className="cardFooter">
                                       <h4 className="titleH4">{prod.name}</h4>

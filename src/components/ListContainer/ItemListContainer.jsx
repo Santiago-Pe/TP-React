@@ -1,4 +1,4 @@
-import bannerUno from "../assets/img/bannerUno.png";
+
 import Img from "./Img"
 import TitleH3 from "../Ttiles/TitleH3";
 
@@ -8,7 +8,7 @@ const ItemListContainer = (props) =>
 
         <div>
             <div className="containerDbaner">
-                <Img src={bannerUno} alt="Imagenes de bebidas" className="imgBanner"/>
+                <Img src={"./assets/img/bannerUno.png"} alt="Imagenes de bebidas" className="imgBanner"/>
                 <div className="textBox">
                     <TitleH3 className="titleH3" title="Ven a visitarnos!"/>
                     <hr/>
