@@ -1,8 +1,3 @@
-import Img from "../ListContainer/Img"
-import JackDaniels from "../assets/img/JackDaniels.png"
-import JackDanielsHoney from "../assets/img/JackDanielsHoney.png"
-import ChivasRegal from "../assets/img/ChivasRegal.png"
-
 const productos = 
 [
   { 
@@ -11,7 +6,7 @@ const productos =
     descriptio: "Jack Daniels Honey 750 ml",
     stock: 10,
     precio: 3500,
-    img: <Img src={JackDanielsHoney} alt={"Jack Daniels Honey"} className={"imgCard"}/>
+    img:"./assets/img/Whiskys/JackDanielsHoney.png" 
   },
   
   {
@@ -20,7 +15,7 @@ const productos =
     descriptio: "Jack Daniels E.Negra 750 ml",
     stock: 15,
     precio: 1500,
-    img: <Img src={JackDaniels} alt={"Jack Daniels Etq Negra"} className={"imgCard"}/>
+    img: "./assets/img/Whiskys/JackDaniels.png" 
   },
   {
     id:"3",
@@ -28,7 +23,7 @@ const productos =
     descriptio: "Chivas Regal 750 ml",
     stock: 10,
     precio: 5500,
-    img: <Img src={ChivasRegal} alt={"Chivas Regal"} className={"imgCard"}/>
+    img:"./assets/img/Whiskys/ChivasRegal.png" 
   }
 ];
 
