@@ -2,8 +2,9 @@ const productos =
 [
   { 
     id:"1",
-    name: "Whisky",
-    descriptio: "Jack Daniels Honey 750 ml",
+    class:"Whisky",
+    name: "Jack Daniels Honey",
+    descriptio: "750 ml",
     stock: 10,
     precio: 3500,
     img:"./assets/img/Whiskys/JackDanielsHoney.png" 
@@ -11,16 +12,18 @@ const productos =
   
   {
     id:"2",
-    name: "Whisky",
-    descriptio: "Jack Daniels E.Negra 750 ml",
+    class:"Whisky",
+    name: "Jack Daniels",
+    descriptio: "750 ml",
     stock: 15,
     precio: 1500,
     img: "./assets/img/Whiskys/JackDaniels.png" 
   },
   {
-    id:"3",
-    name: "Whisky",
-    descriptio: "Chivas Regal 750 ml",
+    id:"1",
+    class:"Whisky",
+    name: "Chivas Regal",
+    descriptio: "750 ml",
     stock: 10,
     precio: 5500,
     img:"./assets/img/Whiskys/ChivasRegal.png" 

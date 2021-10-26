@@ -7,7 +7,8 @@ function App()
   return (
     <div className="Nav">
       <NavBar/>  
-      <ItemListContainer/>
+      {/* En ItemListContainer tengo: Navbar y Banner */}
+      <ItemListContainer/> 
       <ComponentePromise/>
     </div>
   );
