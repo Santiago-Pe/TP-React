@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import getFetch from "../services/getFetch";
-import  ButtonCartWidget from "../Buttons/ButtonCartWidget";
+import  ButtonGeneral from "../Buttons/ButtonGeneral";
 import Img from "../ListContainer/Img"
 
 
@@ -28,18 +28,16 @@ const ComponentePromise = () =>
       <div className="containerGeneralCard">
         { loading ? <h3 className="titleH3">Cargando..</h3> : 
               product.map(prod=> <div key={prod.id} className="containerList">
-                                    <div className="cardBody">
+                                    <div>
                                     <Img src={prod.img} alt="Imagenes de bebidas" className="imgCard"/>
                                     </div>
                                     <div className="cardFooter">
-                                      <h4 className="titleH4">{prod.name}</h4>
+                                      <h4 className="titleH4">{prod.class}</h4>
                                       <hr />
-                                      {prod.descriptio}
-                                      <br/>
-                                      ${prod.precio}
+                                      {prod.name}
                                     </div>
                                     <div className="buttonCard">
-                                    <ButtonCartWidget stock={prod.stock} initial={1}/>
+                                    <ButtonGeneral className="btnGeneral" text="Ver Detalle"/>
                                     </div>
                                   </div>
               )             

@@ -38,22 +38,20 @@ const ButtonsCartWidget = ({initial, stock}) =>
     };
 
     return(
-        <div className="containerAddToCart">
             <div className="buttonCartWidgetBox">    
-                <button className="buttonCartW btnSimbol" onClick = {removeCartWidget}>
+                <button className="buttonCartW" onClick = {removeCartWidget}>
                     -
                 </button>
                 <div className="countBox">
                     <TituloH4 className="titleH4" title={count}/>
-                    <button className="addToCartW" onClick={addToCartFinally}>
+                    <button className="btnGeneral" onClick={addToCartFinally}>
                         Añadir al Carrito
                     </button>
                 </div>
-                <button className="buttonCartW btnSimbol" onClick = {addCartWidget}>
+                <button className="buttonCartW" onClick = {addCartWidget}>
                     +
                 </button>
-            </div>
-        </div>    
+            </div> 
     )
 }
 
