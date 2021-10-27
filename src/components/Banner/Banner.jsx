@@ -1,12 +1,12 @@
-import Img from "./Img"
+import Img from "../Container/Img";
 import TitleH3 from "../Ttiles/TitleH3";
 import ButtonGeneral from "../Buttons/ButtonGeneral";
 
-const ItemListContainer = (props) =>
+const Banner = () =>
 {
     return(
-
         <div>
+            {/* Pasar esto aun componente */}
             <div className="boxBanner">
                 <Img src={"./assets/img/bannerUno.png"} alt="Imagenes de bebidas" className="imgBanner"/>
                 <div className="textBox">
@@ -24,7 +24,7 @@ const ItemListContainer = (props) =>
             </div>
             <hr/>
         </div>  
-          
-)}
+    )
+}
 
-export default ItemListContainer
+export default Banner

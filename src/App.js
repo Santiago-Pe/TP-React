@@ -1,16 +1,15 @@
 import NavBar from "./components/NavBar/NavBar";
-import ItemListContainer from "./components/ListContainer/ItemListContainer";
-import ComponentePromise from "./components/Promises/ComponentePromise";
+import Banner from "./components/Banner/Banner";
+import ItemListContainer from "./components/Container/ItemListContainer/ItemListContainer";
 
 function App() 
 {
   return (
-    <div className="Nav">
+    <>
       <NavBar/>  
-      {/* En ItemListContainer tengo: Navbar y Banner */}
+      <Banner/>
       <ItemListContainer/> 
-      <ComponentePromise/>
-    </div>
+    </>
   );
 }
 
