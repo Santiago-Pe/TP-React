@@ -1,5 +1,5 @@
 import NavBar from "./components/NavBar/NavBar";
-import Banner from "./components/Banner/Banner";
+import BannerContainer from "./components/Banner/BannerContainer";
 import ItemListContainer from "./components/Container/ItemListContainer/ItemListContainer";
 
 function App() 
@@ -7,8 +7,10 @@ function App()
   return (
     <>
       <NavBar/>  
-      <Banner/>
+      <BannerContainer/>
       <ItemListContainer/> 
+      {/* ItemListDetailContainer */}
+      {/* Footer */}
     </>
   );
 }

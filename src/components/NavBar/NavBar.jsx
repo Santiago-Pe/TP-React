@@ -1,5 +1,6 @@
 import CartWidget from "./CartWidget"
 import TituloH1 from "../Ttiles/TitleH1"
+import "./navBarCw.css"
 
 const NavBar = () => 
 {

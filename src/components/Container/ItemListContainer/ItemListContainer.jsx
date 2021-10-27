@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import ItemList from "../../ItemList/ItemList";
+import ItemListCard from "../../ItemList/ItemListCard";
 import getFetch from "../../services/getFetch"
 
 const ItemListContainer = (props) =>
@@ -8,8 +8,8 @@ const ItemListContainer = (props) =>
     const [loading, setLoading] = useState(true); //este ver que onda
 
     useEffect (()=>
-        {
-            getFetch
+    {
+        getFetch
             .then( res =>
                 {
                 console.log('Llamada a la API')
@@ -18,11 +18,11 @@ const ItemListContainer = (props) =>
             )
             .catch(err => console.log(err))
             .finally(() => setLoading((false)))
-        }, [])
+    }, [])
         
     return(
         <>
-            {loading ? <h3 className="titleH3">Cargando..</h3> : <ItemList product={product} />}
+            {loading ? <h3 className="titleH3">Cargando..</h3> : <ItemListCard product={product} />}
         </>    
     )
 }

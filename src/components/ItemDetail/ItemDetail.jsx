@@ -1,8 +1,9 @@
+
 const ItemDetail = () =>
 {
     return(
         <>
-        Soy un item detail
+            
         </>
     )
 }

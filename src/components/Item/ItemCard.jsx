@@ -1,7 +1,8 @@
-import ButtonGeneral from "../Buttons/ButtonGeneral";
-const Item = ({prod}) =>
+import ButtonGeneral from "../Buttons/ButtonGeneral/ButtonGeneral";
+const ItemCard = ({prod}) =>
 {
     return(
+        
         <div className="containerList">
             <div>
                 <img src={prod.img} alt="Imagenes de bebidas" className="imgCard"/>
@@ -18,4 +19,4 @@ const Item = ({prod}) =>
     )
 }
 
-export default Item
+export default ItemCard
