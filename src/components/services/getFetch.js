@@ -33,6 +33,14 @@ const productos =
 // Promise ((res, rej) =>{})
 //res --> resuelto funcion cuando esta todo ok 
 // rej --> rechazado funcion cuando est mal
+export const getFetchDetail = new Promise((resolve, reject)=>{
+  setTimeout(()=>{
+    resolve(productos)
+}, 2000)
+});
+
+
+
 
 const getFetch = new Promise((resolve, reject)=>{
     setTimeout(()=>{

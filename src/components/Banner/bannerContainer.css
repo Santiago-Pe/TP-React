@@ -1,0 +1,39 @@
+.boxBanner
+{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.imgBanner
+{
+    margin: 1rem;
+    height: 80vh;
+    width: auto;
+}
+.textBox
+{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    align-items: center;
+    justify-content: center;
+
+    margin: 1rem;
+}
+.text
+{
+    font-family: "Quicksand";
+    text-align: left;
+    font-size: 30px;
+    font-weight: 500;
+    color:black;
+}
+.btnGeneralBanner
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

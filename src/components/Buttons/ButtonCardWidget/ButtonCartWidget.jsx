@@ -1,5 +1,6 @@
 import React, {useState} from "react";
-import TituloH4 from "../Ttiles/TitleH4"
+import TituloH4 from "../../Ttiles/TitleH4"
+import "./buttonCardWidget.css"
 
 
 

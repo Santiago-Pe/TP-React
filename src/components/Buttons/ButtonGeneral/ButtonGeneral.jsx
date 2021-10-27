@@ -1,3 +1,4 @@
+import "./buttonGeneral.css"
 const ButtonGeneral = (props) =>
 {
     return(

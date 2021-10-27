@@ -1,14 +1,14 @@
-import Img from "../Container/Img";
 import TitleH3 from "../Ttiles/TitleH3";
-import ButtonGeneral from "../Buttons/ButtonGeneral";
+import ButtonGeneral from "../Buttons/ButtonGeneral/ButtonGeneral";
+import "./bannerContainer.css"
 
-const Banner = () =>
+const BannerContainer = () =>
 {
     return(
         <div>
             {/* Pasar esto aun componente */}
             <div className="boxBanner">
-                <Img src={"./assets/img/bannerUno.png"} alt="Imagenes de bebidas" className="imgBanner"/>
+                <img src={"./assets/img/bannerUno.png"} alt="Imagenes de bebidas" className="imgBanner"/>
                 <div className="textBox">
                     <div>
                         <TitleH3 className="titleH3" title="Ven a visitarnos!"/>
@@ -27,4 +27,4 @@ const Banner = () =>
     )
 }
 
-export default Banner
+export default BannerContainer
