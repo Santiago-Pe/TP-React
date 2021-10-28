@@ -1,6 +1,6 @@
-import ItemDetail from "../../ItemDetail/ItemDetail"
 import { useState, useEffect } from "react"
-import { getFetchDetail } from "../services/getFetch"
+import ItemDetail from "../../ItemDetail/ItemDetail";
+import { getFetchDetail } from "../../services/getFetch"
 
 const ItemDetailContainer = () =>
 {
@@ -14,11 +14,12 @@ const ItemDetailContainer = () =>
             })
             .catch(err => console.log(err))
             .finally(()=> console.log("Todos los datos se han cargado"))
+
     }, [])
     
     return(
         <>
-        {productDetail.filter(<ItemDetail/>)}
+        {productDetail.find(prodDet => <ItemDetail key={prodDet.id === "1"}  prodDet={prodDet}/>)}
         </>
     )
 }
