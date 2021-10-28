@@ -1,3 +1,4 @@
+// import{Link} from "react-router-dom"
 import CartWidget from "./CartWidget"
 import TituloH1 from "../Ttiles/TitleH1"
 import "./navBarCw.css"
@@ -12,14 +13,12 @@ const NavBar = () =>
                     <div className="boxCartWidget">    
                         <a href="">
                             <CartWidget className="cartWidget white sizeL"/>
-                        </a>        
+                        </a>       
                     </div>  
                     <div className = "navbarMain" >
-                        {/* ver de hacer con map */}
-                        <li><a href="">Inicio</a></li>
+                        <li><a herf="">Inicio</a></li>  
                         <li><a href="">Productos</a>
                             <ul className = "subNavbarMain">
-                                {/* ver de hacer con map */}
                                 <li><a href="">Vinos</a></li>
                                 <li><a href="">Vermuts</a></li>
                                 <li><a href="">Vodkas</a></li>
@@ -29,8 +28,8 @@ const NavBar = () =>
                                 <li><a href="">Champagne</a></li>
                             </ul>
                         </li>    
-                        <li><a href="">Contacto</a></li>
-                        <li><a href="">Quienes somos</a></li>
+                        <li><a>Contacto</a></li>
+                        <li><a>Quienes somos</a></li>
                     </div>   
                 </ul>
             </nav>
