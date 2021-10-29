@@ -11,7 +11,7 @@ const ButtonsCartWidget = ({initial, stock}) =>
 
     const addCartWidget = () =>
     {
-        if (count == stock)
+        if (count === stock)
         {
             return stock
         }
@@ -24,7 +24,7 @@ const ButtonsCartWidget = ({initial, stock}) =>
     };
     const removeCartWidget = () =>
     {
-        if(count == initial )
+        if(count === initial )
         {
             return initial
         }
