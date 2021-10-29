@@ -5,28 +5,32 @@ import { getFetchDetail } from "../../services/getFetch"
 
 const ItemDetailContainer = () =>
 {
-    const [productDetail, setProductDetail] = useState([]);
-    // const {id} = useParams()
+    const [productsDetail, setProductsDetail] = useState([]);
+    const [firstProductDetail, setFirstProductDetail] = useState({});
+    
     useEffect(()=>
     {
         getFetchDetail
         .then( resp =>
         {
-            setProductDetail(resp)
+            setProductsDetail(resp)
         })
         .catch(err => console.log(err))
         .finally(()=> console.log("Todos los datos se han cargado"))
         
 
     }, []);
-    console.log(productDetail)
-
-
+    
+    useEffect(()=>
+    {
+        if(productsDetail && productsDetail.length > 0){
+            setFirstProductDetail(productsDetail.find(p => ({id: '1'})))
+        }
+    }, [productsDetail]);
     
     return(
-        <ItemDetail productDetail={productDetail}/>
+        <ItemDetail productDetail={firstProductDetail}/>
     )
-        
 }
 
 export default ItemDetailContainer

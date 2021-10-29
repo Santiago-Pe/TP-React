@@ -8,9 +8,9 @@ const ItemCard = ({prod}) =>
                 <img src={prod.img} alt="Imagenes de bebidas" className="imgCard"/>
             </div>
             <div className="cardFooter">
-                <h4 className="titleH4">{prod.class}</h4>
+                <h4 className="titleH4">{prod.clase}</h4>
                 <hr />
-                {prod.name}
+                {prod.nombre}
             </div>
             <div className="buttonCard">
                 <ButtonGeneral className="btnGeneral" text="Ver Detalle"/>

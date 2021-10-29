@@ -1,31 +1,24 @@
-// import Detail from "./Detail"
+import React from 'react'
 import ButtonCartWidget from "../Buttons/ButtonCardWidget/ButtonCartWidget"
 
 const ItemDetail = ({productDetail}) =>
 {
-
     return(
        <>
-        <div>
-            {
-                productDetail.find(prodDetail =><div key={prodDetail.id === "1"} className="containerProdDetail">
-                    
-                                                    <div className="prodDetailImgBox">
-                                                        {prodDetail.img}
-                                                    </div>
-                                                    <div className="prodDetailTextBox">
-                                                        <h3>{prodDetail.class}</h3>
-                                                        <h4>{prodDetail.name}</h4>
-                                                        <p>{prodDetail.description}</p>
-                                                        <p>{prodDetail.precio}</p>
-                                                    </div>
-                                                    <div>
-                                                        <ButtonCartWidget/>
-                                                    </div>
-                                                </div>
-                )
-            }
-        </div>    
+            <div className="containerProdDetail">
+                <div className="prodDetailImgBox">
+                   <img src={productDetail.img} alt="Imagen de Jack Daniels Honey" /> 
+                </div>
+                <div className="prodDetailTextBox">
+                    <h3>{productDetail.clase}</h3>
+                    <h4>{productDetail.nombre}</h4>
+                    <p>{productDetail.descripcion}</p>
+                    <p>${productDetail.precio}</p>
+                </div>
+                <div>
+                    <ButtonCartWidget/>
+                </div>
+            </div>
        </>
     )
 }
