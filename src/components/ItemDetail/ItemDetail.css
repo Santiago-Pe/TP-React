@@ -1,0 +1,28 @@
+.containerProdDetail
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+.prodDetailBox
+{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.imgDetail
+{
+    width: 20vw;
+    height: 40vh;
+    border-radius: 8px;
+}
+.prodDetailText
+{
+    margin: 1rem;
+}
