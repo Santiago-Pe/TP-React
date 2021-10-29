@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useParams } from 'react-router-dom'
+// import { useParams } from 'react-router-dom'
 import ItemDetail from "../../ItemDetail/ItemDetail";
 import { getFetchDetail } from "../../services/getFetch"
 
@@ -24,9 +24,7 @@ const ItemDetailContainer = () =>
 
     
     return(
-        <>
-        <ItemDetail product={productDetail}></ItemDetail>
-        </>
+        <ItemDetail productDetail={productDetail}/>
     )
         
 }
