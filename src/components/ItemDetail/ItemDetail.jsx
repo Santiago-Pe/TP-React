@@ -6,6 +6,7 @@ const ItemDetail = ({productDetail}) =>
 
     return(
        <>
+        <div>
             {
                 productDetail.find(prodDetail =><div key={prodDetail.id === "1"} className="containerProdDetail">
                     
@@ -24,6 +25,7 @@ const ItemDetail = ({productDetail}) =>
                                                 </div>
                 )
             }
+        </div>    
        </>
     )
 }
