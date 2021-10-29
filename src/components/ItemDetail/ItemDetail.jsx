@@ -1,14 +1,27 @@
+// import Detail from "./Detail"
+import ButtonCartWidget from "../Buttons/ButtonCardWidget/ButtonCartWidget"
 
-const ItemDetail = (prodDet) =>
+const ItemDetail = (productDetail) =>
 {
+
     return(
-        <div>
-            <label>{prodDet.class}</label>
-            <label>{prodDet.name}</label>
-            <label>{prodDet.img}</label>
-            <label>{prodDet.descrition}</label>
-            <label>{prodDet.precio}</label>
+       <>
+        {productDetail.find(productDetail => productDetail== "1")}
+        <div key={productDetail.id} className="containerProdDetail">
+            <div className="prodDetailImgBox">
+                {productDetail.img}
+            </div>
+            <div className="prodDetailTextBox">
+                <h3>{productDetail.class}</h3>
+                <h4>{productDetail.name}</h4>
+                <p>{productDetail.description}</p>
+                <p>{productDetail.precio}</p>
+            </div>
+            <div>
+            <ButtonCartWidget/>
+            </div>
         </div>
+       </>
     )
 }
 
