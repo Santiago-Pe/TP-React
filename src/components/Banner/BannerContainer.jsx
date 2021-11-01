@@ -1,4 +1,5 @@
 import TitleH3 from "../Ttiles/TitleH3";
+import TitleH1 from "../Ttiles/TitleH1";
 import ButtonGeneral from "../Buttons/ButtonGeneral/ButtonGeneral";
 import "./bannerContainer.css"
 
@@ -6,6 +7,7 @@ const BannerContainer = () =>
 {
     return(
         <div>
+            <TitleH1 className ="titleH1" title="Vineria Online"/>
             {/* Pasar esto aun componente */}
             <div className="boxBanner">
                 <img src={"./assets/img/bannerUno.png"} alt="Imagenes de bebidas" className="imgBanner"/>

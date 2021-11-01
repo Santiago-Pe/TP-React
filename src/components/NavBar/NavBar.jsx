@@ -1,4 +1,4 @@
-// import{Link} from "react-router-dom"
+import{Link} from "react-router-dom"
 import CartWidget from "./CartWidget"
 import TituloH1 from "../Ttiles/TitleH1"
 import "./navBarCw.css"
@@ -11,29 +11,28 @@ const NavBar = () =>
             <nav className="navbar">
                 <ul className = "boxNavbar">   
                     <div className="boxCartWidget">    
-                        <a href="">
+                        <Link to={`/`}>
                             <CartWidget className="cartWidget white sizeL"/>
-                        </a>       
+                        </Link>       
                     </div>  
                     <div className = "navbarMain" >
-                        <li><a herf="">Inicio</a></li>  
-                        <li><a href="">Productos</a>
+                        <li><Link to={`/`}>Inicio</Link></li>  
+                        <li><Link to={`/`}>Productos</Link>
                             <ul className = "subNavbarMain">
-                                <li><a href="">Vinos</a></li>
-                                <li><a href="">Vermuts</a></li>
-                                <li><a href="">Vodkas</a></li>
-                                <li><a href="">Gines</a></li>
-                                <li><a href="">Licores</a></li>
-                                <li><a href="">Whiskys</a></li>
-                                <li><a href="">Champagne</a></li>
+                                <li><Link to={`/categoria/Vinos`}>Vinos</Link></li>
+                                <li><Link to={`/categoria/Vermuts`}>Vermuts</Link></li>
+                                <li><Link to={`/categoria/Vokdas`}>Vodkas</Link></li>
+                                <li><Link to={`/categoria/Gins`}>Gins</Link></li>
+                                <li><Link to={`/categoria/Licores`}>Licores</Link></li>
+                                <li><Link to={`/categoria/Whiskys`}>Whiskys</Link></li>
+                                <li><Link to={`/categoria/Champagnes`}>Champagne</Link></li>
                             </ul>
                         </li>    
-                        <li><a>Contacto</a></li>
-                        <li><a>Quienes somos</a></li>
+                        <li><Link to={`/`}>Contacto</Link></li>
+                        <li><Link to={`/`}>Quienes somos</Link></li>
                     </div>   
                 </ul>
             </nav>
-            <TituloH1 className ="titleH1" title="Vineria Online"/>
         </header>
     )
     
