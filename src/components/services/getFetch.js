@@ -2,31 +2,31 @@ const productos =
 [
   { 
     id:"1",
-    clase:"Whisky",
+    categoria:"Whiskys",
     nombre: "Jack Daniels Honey",
     detalle: "750 ml",
     stock: 10,
     precio: 3500,
-    img:"./assets/img/Whiskys/JackDanielsHoney.png" 
+    img:"../assets/img/Whiskys/JackDanielsHoney.png" 
   },
   
   {
     id:"2",
-    clase:"Whisky",
+    categoria:"Whiskys",
     nombre: "Jack Daniels",
     detalle: "750 ml",
     stock: 15,
     precio: 1500,
-    img: "./assets/img/Whiskys/JackDaniels.png" 
+    img: "../assets/img/Whiskys/JackDaniels.png" 
   },
   {
     id:"3",
-    clase:"Whisky",
+    categoria:"Vinos",
     nombre: "Chivas Regal",
     detalle: "750 ml",
     stock: 10,
     precio: 5500,
-    img:"./assets/img/Whiskys/ChivasRegal.png" 
+    img:"../assets/img/Whiskys/ChivasRegal.png" 
   }
 ];
 
