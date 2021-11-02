@@ -1,5 +1,5 @@
 import React from 'react'
-import ButtonCartWidget from "../Buttons/ButtonCardWidget/ButtonCartWidget"
+import ButtonCartWidget from "../../../Buttons/ButtonCardWidget/ButtonCartWidget"
 import "./itemDetail.css"
 
 const ItemDetail = ({productDetail}) =>
@@ -15,7 +15,7 @@ const ItemDetail = ({productDetail}) =>
                     <div className="prodDetailText">
                         <h3>{productDetail.categoria}</h3>
                         <h4>{productDetail.nombre}</h4>
-                        <p>{productDetail.descripcion}</p>
+                        <p>{productDetail.detalle}</p>
                         <p>${productDetail.precio}</p>
                     </div>
                     <hr />

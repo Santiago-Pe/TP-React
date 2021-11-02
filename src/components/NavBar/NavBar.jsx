@@ -1,6 +1,5 @@
 import{Link} from "react-router-dom"
-import CartWidget from "./CartWidget"
-import TituloH1 from "../Ttiles/TitleH1"
+import CartWidget from "../services/CartWidget"
 import "./navBarCw.css"
 
 const NavBar = () => 
@@ -21,7 +20,7 @@ const NavBar = () =>
                             <ul className = "subNavbarMain">
                                 <li><Link to={`/categoria/Vinos`}>Vinos</Link></li>
                                 <li><Link to={`/categoria/Vermuts`}>Vermuts</Link></li>
-                                <li><Link to={`/categoria/Vokdas`}>Vodkas</Link></li>
+                                <li><Link to={`/categoria/Vodkas`}>Vodkas</Link></li>
                                 <li><Link to={`/categoria/Gins`}>Gins</Link></li>
                                 <li><Link to={`/categoria/Licores`}>Licores</Link></li>
                                 <li><Link to={`/categoria/Whiskys`}>Whiskys</Link></li>
