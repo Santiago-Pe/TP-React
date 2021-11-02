@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import ItemListCard from "../../ItemList/ItemListCard";
+import ItemListCard from "./ItemList/ItemListCard";
 import getFetch from "../../services/getFetch"
 
 const ItemListContainer = (props) =>
@@ -21,7 +21,7 @@ const ItemListContainer = (props) =>
                     setProduct(res.filter(prod => prod.categoria === id))
                     }
                 )
-                .catch(err => console.log(err))
+                .catch(err => alert(`Error: ${err}` ))
                 .finally(() => setLoading((false)))
         }
         else
@@ -33,7 +33,7 @@ const ItemListContainer = (props) =>
                 setProduct(res)
                 }
             )
-            .catch(err => console.log(err))
+            .catch(err => alert(`Error: ${err}` ))
             .finally(() => setLoading((false))) 
         }    
     }, [id])

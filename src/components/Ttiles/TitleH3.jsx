@@ -1,3 +1,4 @@
+import "./titles.css"
 const TituloH3 = (props) =>
 {
     return(

@@ -1,35 +1,30 @@
 import { useState, useEffect } from "react"
-// import { useParams } from 'react-router-dom'
-import ItemDetail from "../../ItemDetail/ItemDetail";
+import { useParams } from 'react-router-dom'
+import ItemDetail from "./ItemDetail/ItemDetail";
 import { getFetchDetail } from "../../services/getFetch"
 
 const ItemDetailContainer = () =>
 {
     const [productsDetail, setProductsDetail] = useState([]);
-    const [firstProductDetail, setFirstProductDetail] = useState({});
+    // const [firstProductDetail, setFirstProductDetail] = useState({});
+
+    const {id}  = useParams();
     
     useEffect(()=>
     {
+       
         getFetchDetail
         .then( resp =>
         {
-            setProductsDetail(resp)
+           setProductsDetail(resp.find(pd => pd.id === id))
         })
-        .catch(err => console.log(err))
+        .catch(err => alert(`Error: ${err}`))
         .finally(()=> console.log("Todos los datos se han cargado"))
         
 
-    }, []);
-    
-    useEffect(()=>
-    {
-        if(productsDetail && productsDetail.length > 0){
-            setFirstProductDetail(productsDetail.find(p => ({id: '1'})))
-        }
-    }, [productsDetail]);
-    
+    }, [id]);
     return(
-        <ItemDetail productDetail={firstProductDetail}/>
+        <ItemDetail productDetail={productsDetail}/>
     )
 }
 

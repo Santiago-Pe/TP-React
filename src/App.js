@@ -19,8 +19,9 @@ function App()
           <Route excat path="/categoria/:id"  exact component={ItemListContainer}/>   
           <Route exact path="/detalle/:id" component={ItemDetailContainer}/>   
         </Switch>  
+        {/* Footer */}
       </BrowserRouter>
-      {/* Footer */}
+  
     </>
   );
 }
