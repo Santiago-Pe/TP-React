@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+Vinoteca Online
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Proyecto de una pagina SPA e-commerce
 
 ## Available Scripts
 
