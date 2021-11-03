@@ -10,6 +10,10 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
+.containerGeneralCard 
+{
+
+}
 .containerList
 {
     display: flex;
@@ -23,6 +27,7 @@
     border-radius: 10px;
 
     padding: 0.5rem;
+    margin: 2rem;
 }
 
 .cardHeader
