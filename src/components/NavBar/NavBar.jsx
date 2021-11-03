@@ -7,10 +7,11 @@ const NavBar = () =>
     return (
     // Cambiar los links de los "a" cuando esten las paginas creadas
         <header>
+            
             <nav className="navbar">
                 <ul className = "boxNavbar">   
                     <div className="boxCartWidget">    
-                        <Link to={`/`}>
+                        <Link to={`/cart`}>
                             <CartWidget className="cartWidget white sizeL"/>
                         </Link>       
                     </div>  

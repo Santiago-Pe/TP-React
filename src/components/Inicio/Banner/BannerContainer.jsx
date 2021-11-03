@@ -24,7 +24,6 @@ const BannerContainer = () =>
                     <ButtonGeneral className="btnGeneral" text="VER PRODUCTOS"/>
                 </div>
             </div>
-            <hr/>
         </div>  
     )
 }

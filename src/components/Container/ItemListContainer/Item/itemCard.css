@@ -1,48 +1,52 @@
 /* CARDS */
-.containerGeneralCard
+.containerCard
 {
+    width: auto;
+    max-width: 1200px;
+    height: 430px;
+
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-}
-.containerGeneralCard 
-{
-
-}
-.containerList
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
+    justify-content: center;
+    margin: auto;
 
     font-family: "Quicksand";
-    color:black;
-    background-color: white;
-    border-radius: 10px;
-
-    padding: 0.5rem;
-    margin: 2rem;
 }
-
-.cardHeader
+.boxCard
 {
-    font-weight: 700;
-    font-size: 25px;
+  width: 330px;
+  height: 400px;
+  border-radius: 8px;
+  box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2); 
+  overflow: hidden;
+  margin: 20px; 
+  text-align: center;
+  transition: all 0.25s;
+}
+.boxCard:hover
+{
+transform: translateY(-15px);
+box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
 }
 .imgCard
 {
-    width: 20vw;
-    height: 40vh;
-    margin: 0.2rem;
-    border-radius: 8px;
+    width: 100%;
+    height: 300px;
 }
-.cardFooter
+.boxCard h4
 {
-    text-align: justify;
+    font-weight: 600;
+}
+.boxCard p
+{
+  padding: 0 1rem;
+  font-size: 16px;
+  font-weight: 300;  
+}
+
+.boxCard a
+{
+    font-weight: 500;
+    text-decoration: none;
+    color:red; 
 }
