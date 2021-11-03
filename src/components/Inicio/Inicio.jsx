@@ -4,7 +4,6 @@ const Inicio = () =>
 {
     return(
         <>
-        Soy Inicio
         <BannerContainer/>
         </>
     )

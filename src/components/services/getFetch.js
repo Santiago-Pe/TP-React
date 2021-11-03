@@ -7,7 +7,8 @@ const productos =
     detalle: "750 ml",
     stock: 10,
     precio: 3500,
-    img:"../assets/img/Whiskys/JackDanielsHoney.png" 
+    img:"../assets/img/Whiskys/JackDanielsHoney.png",
+    link:"https://www.esquirelat.com/comida-bebida/3-tragos-deliciosos-que-puedes-preparar-con-jack-daniels-honey/"
   },
   
   {
@@ -17,7 +18,8 @@ const productos =
     detalle: "750 ml",
     stock: 15,
     precio: 1500,
-    img: "../assets/img/Whiskys/JackDaniels.png" 
+    img: "../assets/img/Whiskys/JackDaniels.png",
+    link:"https://www.vix.com/es/imj/gourmet/3695/5-tragos-con-jack-daniels"
   },
   {
     id:"3",
@@ -26,7 +28,8 @@ const productos =
     detalle: "750 ml",
     stock: 10,
     precio: 5500,
-    img:"../assets/img/Whiskys/ChivasRegal.png" 
+    img:"../assets/img/Whiskys/ChivasRegal.png",
+    link:"https://www.gq.com.mx/estilo-de-vida/articulo/chivas-regal-extra-13-cocteles"
   },
   {
     id:"4",
@@ -35,7 +38,8 @@ const productos =
     detalle: "750 ml",
     stock: 20,
     precio: 3500,
-    img:"../assets/img/Vodkas/Absolut.png" 
+    img:"../assets/img/Vodkas/Absolut.png",
+    link:"https://www.absolutdrinks.com/es/drinks/with/absolut-vodka/"
   },
   {
     id:"5",
@@ -44,7 +48,8 @@ const productos =
     detalle: "750 ml",
     stock: 30,
     precio:1500,
-    img:"../assets/img/Vodkas/Smirnoff.png" 
+    img:"../assets/img/Vodkas/Smirnoff.png",
+    link:"https://www.smirnoff.com/es-row/"
   },
   {
     id:"6",
@@ -53,7 +58,8 @@ const productos =
     detalle: "750 ml",
     stock: 25,
     precio:1500,
-    img:"../assets/img/Vodkas/Sky.png" 
+    img:"../assets/img/Vodkas/Sky.png",
+    link:"https://monchitime.com/2015/07/skyy-vodka-presenta-su-nuevo-recetario-de-cocteles-para-el-verano-2015/"
   },
   {
     id:"7",
@@ -62,7 +68,8 @@ const productos =
     detalle: "750 ml",
     stock: 25,
     precio:1000,
-    img:"../assets/img/Vermuts/FernetBrancaG.png" 
+    img:"../assets/img/Vermuts/FernetBrancaG.png",
+    link:"https://www.recetas-argentinas.com/recetas/bebidas/fernet-con-coca"
   },
   {
     id:"8",
@@ -81,7 +88,8 @@ const productos =
     detalle: "750 ml",
     stock: 25,
     precio:1500,
-    img:"../assets/img/Vermuts/Campari.png" 
+    img:"../assets/img/Vermuts/Campari.png",
+    link:"https://www.craftsociety.com.ar/pages/los-mejores-tragos-para-hacer-con-campari" 
   },
   {
     id:"10",
@@ -90,7 +98,8 @@ const productos =
     detalle: "750 ml",
     stock: 15,
     precio: 2500,
-    img:"../assets/img/Gins/Beefeater.png" 
+    img:"../assets/img/Gins/Beefeater.png",
+    link:"https://www.beefeatergin.com/es-AR/cocktails"
   },
   {
     id:"11",
@@ -99,7 +108,8 @@ const productos =
     detalle: "750 ml",
     stock:  10,
     precio: 300,
-    img:"../assets/img/Gins/BombaySapphire.png" 
+    img:"../assets/img/Gins/BombaySapphire.png",
+    link:"https://www.bombaysapphire.com/lm/es/cocktails/"
   },
   {
     id:"12",
@@ -108,7 +118,8 @@ const productos =
     detalle: "750 ml",
     stock: 10,
     precio: 2500,
-    img:"../assets/img/Gins/Gordons.png" 
+    img:"../assets/img/Gins/Gordons.png",
+    link:"https://www.gordonsgin.com/es-es/c%C3%B3cteles/"
   },
   {
     id:"13",
@@ -117,7 +128,8 @@ const productos =
     detalle: "750 ml",
     stock: 25,
     precio:1500,
-    img:"../assets/img/VinosTintos/AlmaMora.png" 
+    img:"../assets/img/VinosTintos/AlmaMora.png",
+    link:"https://vinotinto.com.ar/tragos/"
   },
   {
     id:"14",

@@ -1,77 +1,85 @@
-.containerProdDetail
+.containerDetail
 {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
-
-    font-family: 'Quicksand';
-
-    margin-bottom: auto;
-    margin-top: 4rem;
-    
-    
-    ;
-    
-}
-.prodDetailBox
-{
-    display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
 
-    background-color: white;
-    border-radius: 4px;
+    margin: 2rem;
+    padding: 2rem;
 
-    padding: 1rem;
-
-    height: auto;
-  
+    font-family: "Quicksand";
 }
-.prodDetailBox > hr
-{
-    width: 100%;
-}
-.imgDetail
-{
-    width: 30vw;
-    height: auto;
-    border-radius: 4px;
-}
-.linkSpl
-{
-    text-decoration: none;
-    color: red;
-}
-.prodDetailText
+.textDetailBox
 {
     display: flex;
     flex-direction: column;
-    font-size: 20px;
-
-}
-.prodMktText
-{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
     flex-wrap: wrap;
     align-items: stretch;
+    justify-content: space-between;
+    background-color: white;
+    width: 50%;
+
+    padding-left: 1rem;
 }
-.prodMktText > p
+.textDetailBox h4
 {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 36px;
+    text-align: center;
 }
-.textMkt
+.textDetailBox p
 {
-    font-size: 15px;
-    font-weight: 300;
+    font-size: 20px;
 }
-.textMktTwo
+.containerDetail img
 {
-    font-size: 15px;
-    font-weight: 300;
+    width: auto;
+    height: auto;
+}
+
+
+/* Tablet */
+@media all and (max-width: 920px) 
+{
+    .textDetailBox
+    {
+        width: 420px;
+    } 
+    .containerDetail img
+    {       
+        width: 420px; 
+    }
+}
+/* Mobile */
+@media all and (max-width: 525px) and (orientation:portrait)
+{
+    .textDetailBox
+    {
+        width: 300px;
+    } 
+    .containerDetail img
+    {       
+        width: 300px;
+        height: auto; 
+    }
+    .textDetailBox p
+    {
+        padding: 2px;
+    }
+}
+/* Little mobile */
+@media all and (max-width: 420px)
+{    .textDetailBox
+    {
+        width: 250px;
+    } 
+    .containerDetail img
+    {       
+        width: 250px;
+        height: auto; 
+    }
+    .textDetailBox p
+    {
+        padding: 2px;
+    }
 }
