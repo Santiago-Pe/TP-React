@@ -71,7 +71,8 @@ const productos =
     detalle: "750 ml",
     stock: 15,
     precio:800,
-    img:"../assets/img/Vermuts/Gancia.png" 
+    img:"../assets/img/Vermuts/Gancia.png",
+    link: "https://www.losvinos.com.ar/tragos-y-cocteles/tragos-con-gancia/"
   },
   {
     id:"9",
@@ -222,13 +223,11 @@ const productos =
 // Promise ((res, rej) =>{})
 //res --> resuelto funcion cuando esta todo ok 
 // rej --> rechazado funcion cuando est mal
-export const getFetchDetail = new Promise((resolve, reject)=>{
-  setTimeout(()=>{
-    resolve(productos)
-}, 2000)
-});
-
-
+// export const getFetchDetail = new Promise((resolve, reject)=>{
+//   setTimeout(()=>{
+//     resolve(productos)
+// }, 2000)
+// });
 
 
 const getFetch = new Promise((resolve, reject)=>{

@@ -21,6 +21,7 @@ const ItemCard = ({prod}) =>
                     <ButtonGeneral className="btnGeneral" text="Ver Detalle"/>
                 </Link>    
             </div>
+            <hr />
         </div>
     )
 }
