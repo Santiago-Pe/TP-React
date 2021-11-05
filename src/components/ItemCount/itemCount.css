@@ -33,10 +33,30 @@
     color: white;
 
     border-radius: 6px;
-    background-color: #9b2424;
+    background-color: #1d3557;
     border: none;
 }
 .buttonCartW:hover
 {
-    background-color:  #600707;
+    background-color:  #457b9d;
+}
+
+.btnGeneral
+{
+    width: auto;
+    height: auto;
+    
+    padding: 0.5rem;
+    margin: 0.5rem;
+    
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    background-color: #1d3557;
+    border: none;  
+}
+.btnGeneral:hover
+{
+    background-color:  #457b9d;
+    color: white;
 }

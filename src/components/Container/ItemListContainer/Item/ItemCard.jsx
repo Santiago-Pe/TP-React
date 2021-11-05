@@ -1,4 +1,4 @@
-import ButtonGeneral from "../../../Buttons/ButtonGeneral/ButtonGeneral";
+// import ButtonGeneral from "../../../Buttons/ButtonGeneral/ButtonGeneral";
 import { Link } from "react-router-dom";
 import "./itemCard.css"
 const ItemCard = ({prod}) =>

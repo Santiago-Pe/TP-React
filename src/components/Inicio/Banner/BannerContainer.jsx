@@ -1,6 +1,6 @@
 import TitleH3 from "../../Ttiles/TitleH3";
 import TitleH1 from "../../Ttiles/TitleH1";
-import ButtonGeneral from "../../Buttons/ButtonGeneral/ButtonGeneral";
+// import ButtonGeneral from "../../Buttons/ButtonGeneral/ButtonGeneral";
 import "./bannerContainer.css"
 
 const BannerContainer = () =>
@@ -21,7 +21,8 @@ const BannerContainer = () =>
                             Y mucho mas!
                         </p>
                     </div>    
-                    <ButtonGeneral className="btnGeneral" text="VER PRODUCTOS"/>
+                    <button className="btnGeneral"  onClick={() => console.log("Fui a productos")}>VER PRODUCTOS</button>
+                    {/* No me tomaba el evento si el button era un componente */}
                 </div>
             </div>
         </div>  
