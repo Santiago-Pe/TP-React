@@ -7,7 +7,9 @@ import "./itemCount.css"
 const ItemCount = ({initial, stock}) =>
 {   
     const [count , setCount] = useState (1);
+    const [buttonAction, setButtonAction] = useState("addToCart");
 
+    // ------------- ItemCount inicio-----------------
     const addCartWidget = () =>
     {
         if (count === stock)
@@ -32,13 +34,33 @@ const ItemCount = ({initial, stock}) =>
             setCount(count - 1);
         }    
     };
-    const addToCartFinally = ()=>
+    // ------------- ItemCount Fin-----------------
+   
+    // ------------- Intercambiabilidad inicio-----------------
+   
+    const ButtonAddToCart = () =>  
     {
-        
-        count === 1 ? alert(`Se han agregado ${count} producto al carrito`) : 
-        alert(`Se han agregado ${count} productos al carrito`)
+        const addToCartFinally = ()=>
+        {
+            
+            count === 1 ? alert(`Se han agregado ${count} producto al carrito`) : 
+            alert(`Se han agregado ${count} productos al carrito`)
+    
+        }
+        return(
+        <button className="btnGeneral" onClick={addToCartFinally}>Agregar al carrito</button>
+        )
+    }
 
-    };
+    const ButtonGoToCart = () =>
+    {
+        return ( <button className="btnGeneral" onClick={() => alert("yendo al carrito")}>Ir a mi carrito</button>)
+    }
+    const handleButton = () =>
+    {
+        setButtonAction("goToCart")
+    }
+    // ------------- Intercambiabilidad Fin----------------
 
     return(
             <div className="buttonCartWidgetBox">    
@@ -47,9 +69,14 @@ const ItemCount = ({initial, stock}) =>
                 </button>
                 <div className="countBox">
                     <p>{count}</p>
-                    <button className="btnGeneral" onClick={addToCartFinally}>
-                        Añadir al Carrito
-                    </button>
+                    <div onClick={handleButton}>
+                        {
+                        buttonAction ===  "addToCart" ?
+                        <ButtonAddToCart/> 
+                        :
+                        <ButtonGoToCart/>
+                        }
+                    </div>
                 </div>
                 <button className="buttonCartW" onClick = {addCartWidget}>
                     +
