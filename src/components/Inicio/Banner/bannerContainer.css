@@ -10,7 +10,7 @@
     justify-content: space-around;
     flex-wrap: wrap;
 
-    background-color: rgb(223, 112, 112);
+    background-color: #457b9d
 }
 .imgBanner
 {
@@ -25,6 +25,7 @@
     align-content: flex-start;
     align-items: center;
     justify-content: center;
+    background-color: #6a040f;
 
     margin: 1rem;
 }
@@ -34,7 +35,7 @@
     text-align: left;
     font-size: 30px;
     font-weight: 500;
-    color:black;
+    color:white;
 }
 .btnGeneralBanner
 {
