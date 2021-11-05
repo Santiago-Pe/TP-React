@@ -3,7 +3,7 @@
 {
     width: 100%;
     height: auto;
-    background-color: #600707;
+    background-color: #1d3557;
 }
 .navbar ul
 {
@@ -36,7 +36,7 @@
 }
 .navbarMain > li > a:hover
 {
-    background-color: #9b2424;
+    background-color: #457b9d;
     border-radius: 8px;
     transition: all .10s;
 }
@@ -45,7 +45,7 @@
 .subNavbarMain
 {
     position: absolute;
-    background-color: #bfbfbf;
+    background-color: #f1faee;
     width: 105%;
     border-radius: 8px;
     visibility: hidden;
@@ -56,13 +56,13 @@
 {
     display: block;
     padding: 0.5rem;
-    color: #600707;
+    color: #1d3557;
     font-family: "Quicksand";
     text-decoration: none;   
 }
 .subNavbarMain li a:hover
 {
-    background-color: #979797;
+    background-color: #a8dadc;
     border-radius: 8px;
     transition: all .3s;
 }

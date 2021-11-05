@@ -1,11 +1,10 @@
 import React, {useState} from "react";
-import TituloH4 from "../../Ttiles/TitleH4"
-import "./buttonCardWidget.css"
+import "./itemCount.css"
 
 
 
 
-const ButtonsCartWidget = ({initial, stock}) =>
+const ItemCount = ({initial, stock}) =>
 {   
     const [count , setCount] = useState (1);
 
@@ -35,7 +34,10 @@ const ButtonsCartWidget = ({initial, stock}) =>
     };
     const addToCartFinally = ()=>
     {
-        alert(`Se han agregado ${count} de productos al carrito`);
+        
+        count === 1 ? alert(`Se han agregado ${count} producto al carrito`) : 
+        alert(`Se han agregado ${count} productos al carrito`)
+
     };
 
     return(
@@ -44,7 +46,7 @@ const ButtonsCartWidget = ({initial, stock}) =>
                     -
                 </button>
                 <div className="countBox">
-                    <TituloH4 className="titleH4" title={count}/>
+                    <p>{count}</p>
                     <button className="btnGeneral" onClick={addToCartFinally}>
                         Añadir al Carrito
                     </button>
@@ -56,4 +58,4 @@ const ButtonsCartWidget = ({initial, stock}) =>
     )
 }
 
-export default ButtonsCartWidget
+export default ItemCount

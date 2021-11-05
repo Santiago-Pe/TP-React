@@ -1,10 +1,20 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import ButtonCartWidget from "../../../Buttons/ButtonCardWidget/ButtonCartWidget"
+import {useEffect} from 'react'
+// import { Link } from 'react-router-dom'
+import ItemCount from "../../../ItemCount/ItemCount"
 import "./itemDetail.css"
 
 const ItemDetail = ({productDetail}) =>
 {
+useEffect(()=>{
+
+    window.addEventListener("mousemove", () => console.log("Me estoy moviendo"));
+//     return () => {
+
+//        window.removeEventListener("mousemove", console.log("Me estoy moviendo"));  
+// }
+})
+    
+
     return(
        <>
             <div className="containerDetail">
@@ -27,7 +37,7 @@ const ItemDetail = ({productDetail}) =>
                         Encontra los mejores precios en <i><b>Vineria Online</b></i>
                     </p>
                     <hr />    
-                    <ButtonCartWidget initial={1} stock={productDetail.stock}/>
+                    <ItemCount initial={1} stock={productDetail.stock}/>
                      
                 </div>
             </div>  
