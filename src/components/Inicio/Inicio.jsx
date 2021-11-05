@@ -5,6 +5,7 @@ const Inicio = () =>
     return(
         <>
         <BannerContainer/>
+        {/* Aca iria una muestra pueña de productos + info */}
         </>
     )
 }

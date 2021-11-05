@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { Link } from "react-router-dom";
 import "./itemCount.css"
 
 
@@ -74,7 +75,9 @@ const ItemCount = ({initial, stock}) =>
                         buttonAction ===  "addToCart" ?
                         <ButtonAddToCart/> 
                         :
-                        <ButtonGoToCart/>
+                        <Link to={"/cart"}>
+                            <ButtonGoToCart/>
+                        </Link>
                         }
                     </div>
                 </div>
