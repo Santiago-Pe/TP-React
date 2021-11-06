@@ -3,7 +3,9 @@
 {
     width: 100%;
     height: auto;
-    background-color: #1d3557;
+    background-color: #c26400;
+
+    padding: 0.3rem;
 }
 .navbar ul
 {
@@ -28,7 +30,8 @@
 .navbarMain > li > a
 {
     display: block;
-    padding: 1rem 1.5rem;
+    /* padding: 1rem 1.5rem; */
+    padding: 1rem 1rem;
 
     color: white;
     font-family: "Quicksand";
@@ -36,7 +39,7 @@
 }
 .navbarMain > li > a:hover
 {
-    background-color: #457b9d;
+    background-color: #f3932d;
     border-radius: 8px;
     transition: all .10s;
 }
@@ -45,7 +48,7 @@
 .subNavbarMain
 {
     position: absolute;
-    background-color: #f1faee;
+    background-color:#ffffff;
     width: 105%;
     border-radius: 8px;
     visibility: hidden;
@@ -56,15 +59,16 @@
 {
     display: block;
     padding: 0.5rem;
-    color: #1d3557;
+    color:  #c26400;
     font-family: "Quicksand";
     text-decoration: none;   
 }
 .subNavbarMain li a:hover
 {
-    background-color: #a8dadc;
+    background-color: #c26400;
     border-radius: 8px;
     transition: all .3s;
+    color: white;
 }
 
 .navbarMain li:hover .subNavbarMain
@@ -72,31 +76,16 @@
     visibility: visible;
     opacity: 1;
 }
-.boxCartWidget
-{
-    display: flex;
-}
 /* ICONS */
+
+.logo
+{
+    width: 70px;
+    height: 50px;
+}
 .cartWidget
 {
-	padding-bottom: 0.5rem;
-}
-.cartWidget.white 
-{
-    color: white ;
-   
-}
-.cartWidget.sizeL
-{
-    width: 80px;
-    height: 40px;
-}
-.cartWidget.black
-{
-    color: black;
-}
-.cartWidget.sizeM
-{
-    width: 45px;
-    height: 50px;
+    width: 40px;
+    height: 30px;
+    color: white;
 }

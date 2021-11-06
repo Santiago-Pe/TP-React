@@ -1,7 +1,7 @@
 .boxBanner
 {
     width: 100%;
-    height: auto;
+    height: 100vh;
     margin-top: 1rem;
     margin-bottom: 1rem;
 
@@ -10,7 +10,7 @@
     justify-content: space-around;
     flex-wrap: wrap;
 
-    background-color: #457b9d
+    background-image: #457b9d
 }
 .imgBanner
 {
