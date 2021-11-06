@@ -10,7 +10,7 @@ const BannerContainer = () =>
             <TitleH1 className ="titleH1" title="Vineria Online"/>
             {/* Pasar esto aun componente */}
             <div className="boxBanner">
-                {/* <img src={"./assets/img/bannerUno.png"} alt="Imagenes de bebidas" className="imgBanner"/> */}
+                <img src={"./assets/img/bannerUno.png"} alt="Imagenes de bebidas" className="imgBanner"/>
                 <div className="textBox">
                     <div>
                         <TitleH3 className="titleH3" title="Ven a visitarnos!"/>

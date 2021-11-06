@@ -10,9 +10,9 @@ const NavBar = () =>
             
             <nav className="navbar">
                 <ul className = "boxNavbar">   
-                    <div className="boxCartWidget">    
-                        <Link to={`/cart`}>
-                            <CartWidget className="cartWidget white sizeL"/>
+                    <div className="boxLogo">    
+                        <Link to={`/`}>
+                            <img src={"./assets/img/logoBlanco.png"} alt="ImagenLogo" className="logo" />
                         </Link>       
                     </div>  
                     <div className = "navbarMain" >
@@ -30,6 +30,9 @@ const NavBar = () =>
                         </li>    
                         <li><Link to={`/`}>Contacto</Link></li>
                         <li><Link to={`/`}>Quienes somos</Link></li>
+                    </div>
+                    <div className="boxCartWidget">
+                    <Link to={`/cart`}> <CartWidget className="cartWidget"/></Link>
                     </div>   
                 </ul>
             </nav>
