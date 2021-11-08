@@ -1,4 +1,4 @@
-/* NAVBAR */
+/* NavBar */
 .navbar
 {
     width: 100%;
@@ -6,12 +6,16 @@
     background-color: #c26400;
 
     padding: 0.3rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
 }
 .navbar ul
 {
     list-style: none;
 }
-.boxNavbar
+.navbarMain
 {
     display: flex;
     flex-direction: row;
@@ -26,11 +30,10 @@
 {
     position: relative;
     display: inline-block;
-}
+} 
 .navbarMain > li > a
 {
     display: block;
-    /* padding: 1rem 1.5rem; */
     padding: 1rem 1rem;
 
     color: white;
@@ -49,11 +52,14 @@
 {
     position: absolute;
     background-color:#ffffff;
-    width: 105%;
+    width: auto;
     border-radius: 8px;
     visibility: hidden;
     opacity: 0;
     transition: opacity 1s;
+
+    display: flex;
+    flex-direction: row;
 }
 .subNavbarMain li a 
 {
