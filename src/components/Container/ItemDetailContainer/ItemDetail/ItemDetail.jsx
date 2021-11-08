@@ -7,7 +7,7 @@ const ItemDetail = ({productDetail}) =>
 {
 useEffect(()=>{
 
-    window.addEventListener("mousemove", () => console.log("Me estoy moviendo"));
+    // window.addEventListener("mousemove", () => console.log("Me estoy moviendo"));
 //     return () => {
 
 //        window.removeEventListener("mousemove", console.log("Me estoy moviendo"));  
