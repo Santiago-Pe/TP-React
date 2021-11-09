@@ -5,13 +5,13 @@ import "./itemCount.css"
 
 
 
-const ItemCount = ({initial, stock}) =>
+const ItemCount = ({initial, stock, onAdd}) =>
 {   
-    const [count , setCount] = useState (1);
-    const [buttonAction, setButtonAction] = useState("addToCart");
+    const [count , setCount] = useState (initial);
+    const [buttonChange, setButtonChange] = useState(true);
 
     // ------------- ItemCount inicio-----------------
-    const addCartWidget = () =>
+    const handlerAdd = () =>
     {
         if (count === stock)
         {
@@ -24,7 +24,7 @@ const ItemCount = ({initial, stock}) =>
 
       
     };
-    const removeCartWidget = () =>
+    const handlerRemove = () =>
     {
         if(count === initial )
         {
@@ -41,7 +41,7 @@ const ItemCount = ({initial, stock}) =>
    
     const ButtonAddToCart = () =>  
     {
-        const addToCartFinally = ()=>
+        const messageAddToCart = ()=>
         {
             
             count === 1 ? alert(`Se han agregado ${count} producto al carrito`) : 
@@ -49,7 +49,7 @@ const ItemCount = ({initial, stock}) =>
     
         }
         return(
-        <button className="btnGeneral" onClick={addToCartFinally}>Agregar al carrito</button>
+        <button className="btnGeneral" onClick={messageAddToCart}>Agregar al carrito</button>
         )
     }
 
@@ -59,20 +59,22 @@ const ItemCount = ({initial, stock}) =>
     }
     const handleButton = () =>
     {
-        setButtonAction("goToCart")
+        onAdd(count)
+        setCount(initial)
+        setButtonChange(false)
     }
     // ------------- Intercambiabilidad Fin----------------
 
     return(
             <div className="buttonCartWidgetBox">    
-                <button className="buttonCartW" onClick = {removeCartWidget}>
+                <button className="buttonCartW" onClick = {handlerRemove}>
                     -
                 </button>
                 <div className="countBox">
                     <p>{count}</p>
                     <div onClick={handleButton}>
                         {
-                        buttonAction ===  "addToCart" ?
+                        buttonChange ?
                         <ButtonAddToCart/> 
                         :
                         <Link to={"/cart"}>
@@ -81,7 +83,7 @@ const ItemCount = ({initial, stock}) =>
                         }
                     </div>
                 </div>
-                <button className="buttonCartW" onClick = {addCartWidget}>
+                <button className="buttonCartW" onClick = {handlerAdd}>
                     +
                 </button>
             </div> 

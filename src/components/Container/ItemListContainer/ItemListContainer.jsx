@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemListCard from "./ItemList/ItemListCard";
-import getFetch from "../../services/getFetch"
+import getFetch from "../../Services/getFetch"
 
 const ItemListContainer = (props) =>
 {
@@ -37,8 +37,6 @@ const ItemListContainer = (props) =>
             .finally(() => setLoading((false))) 
         }    
     }, [id])
-        
-    console.log(id); //no me lo muestra
 
     return(
         <>

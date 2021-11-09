@@ -1,20 +1,21 @@
-import {useEffect} from 'react'
+import { useCartContext } from '../../../../CartContext/CartContext'
 // import { Link } from 'react-router-dom'
+import { useState } from 'react'
 import ItemCount from "../../../ItemCount/ItemCount"
 import "./itemDetail.css"
 
 const ItemDetail = ({productDetail}) =>
 {
-useEffect(()=>{
+    const [count, setCount] = useState(0)
+    const {cartList, showList} = useCartContext ()
+    console.log(cartList);
+    console.log(showList);
 
-    // window.addEventListener("mousemove", () => console.log("Me estoy moviendo"));
-//     return () => {
-
-//        window.removeEventListener("mousemove", console.log("Me estoy moviendo"));  
-// }
-})
-    
-
+    const onAdd = (cant)=>
+    {
+        setCount(cant)
+        console.log(cant)
+    }
     return(
        <>
             <div className="containerDetail">
@@ -37,7 +38,7 @@ useEffect(()=>{
                         Encontra los mejores precios en <i><b>Vineria Online</b></i>
                     </p>
                     <hr />    
-                    <ItemCount initial={1} stock={productDetail.stock}/>
+                    <ItemCount initial={1} stock={productDetail.stock} onAdd={onAdd}/>
                      
                 </div>
             </div>  
