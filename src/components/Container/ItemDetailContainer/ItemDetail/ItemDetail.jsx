@@ -10,6 +10,7 @@ const ItemDetail = ({productDetail}) =>
     const [count, setCount] = useState(1); 
     //------Traigo la funcion AddToCart (agregar al carrito)------
     const {addToCart} = useCartContext();
+
     
     //--- Funcion onAdd ---
     const onAdd = (cant)=>
@@ -17,18 +18,18 @@ const ItemDetail = ({productDetail}) =>
         //seteo mi cant en el valor que figure.
         setCount(cant); 
         //Agrego al carrito: nombre, cantidad, precio y precio total de producto.
-        addToCart({ 
-                    id: productDetail.id, 
-                    clase: productDetail.clase, 
-                    nombre: productDetail.nombre, 
-                    precio: productDetail.precio, 
-                    cantidad: cant, 
-                    img: productDetail.img
-                });
-        
-        
+        addToCart(
+                    { 
+                        id: productDetail.id, 
+                        clase: productDetail.clase, 
+                        nombre: productDetail.nombre, 
+                        precio: productDetail.precio, 
+                        cantidad: cant, 
+                        img: productDetail.img
+                    }
+                );
     }
-    console.log( typeof addToCart)
+    
     return(
        <>
             <div className="containerDetail">

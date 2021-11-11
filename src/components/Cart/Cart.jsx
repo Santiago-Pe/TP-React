@@ -2,11 +2,6 @@ import { useCartContext } from "../../CartContext/CartContext";
 
 const Cart = () =>
 {
-    const finalllyBuy = () =>
-    {   
-        
-        console.log ("Su compra ha sido finalizada")
-    }
     const {cartList, removeItemCart, cleanCart} = useCartContext()
     return(
         <div className="containerCart">
@@ -21,11 +16,16 @@ const Cart = () =>
                         <p><b>Cantidad:</b> {itemCardList.cantidad}</p>
                         <p><b>Precio:</b> ${itemCardList.precio}</p>
                     </div>
-                    <button className="btnRemoveItemCart" onClick={removeItemCart}>Eliminar producto de carrito</button>
+                    <button className="btnRemoveItemCart" onClick={() => removeItemCart(itemCardList.id)}>Eliminar producto de carrito</button>
+                    <button className="btnRemoveUnityItemCart" 
+                        onClick={() => itemCardList.cantidad >= 1 ? itemCardList.cantidad - 1 : alert("Ya no hay und de productos para eliminar") }>
+                        Eliminar  unidad de producto de carrito
+                    </button>
                 </div>
                 )
             } 
-        <button className="btnCleanCart" onClick={cleanCart}>Vaciar carrito</button>
+            {/* Aca vamos a insertar intercambiabilidad */}
+        <button className="btnCleanCart" onClick={() => cleanCart()}>Vaciar carrito</button>
         </div>
     )
 }

@@ -25,15 +25,39 @@ const CartContextProvider = ({children}) =>
         }
         else
         {
-            console.log("Este producto ya esta en el carrito")
-            return cartList
+            itemFindCart.cantidad = itemFindCart.cantidad + itemsAdded.cantidad //A mi producto (objeto de array) que comparte mi ID le sumo la cantidad que se especifica en count
+            setCartList(
+                [
+                    ...cartList
+                ]
+            )
         }
     }
     //Remover un item del carrito
-    const removeItemCart = () =>
+    const removeItemCart = itemsRemoveCart =>
     {
-        console.log("el producto fue eliminado")
+        setCartList(cartList.filter(itemSerch => itemSerch.id !== itemsRemoveCart))
+        console.log("producto eliminado")
     }
+    //Elminar 1 unidad de un producto de mi carrito
+    // const removeItemUnity = itemRemoveUnity =>
+    // {
+    //     const itemFindCartUnity = cartList.filter(itfcu => itfcu.id === itemRemoveUnity.id);
+    //     if(itemFindCartUnity.cantidad >= 1)
+    //     {
+    //         itemFindCartUnity.cantidad =   itemFindCartUnity.cantidad - 1;
+    //         setCartList(
+    //             [
+    //                 ...cartList
+    //             ]
+    //         )
+    //     }
+    //     else
+    //     {
+    //         alert("Ya no hay unidades para elminiar")
+    //     }
+        
+    // }
     //Limpiar carrito
     const cleanCart = () =>
     {
