@@ -4,6 +4,7 @@ import "./itemCard.css"
 const ItemCard = ({prod}) =>
 {
     return(
+        //Creo mi card con mi array "prod" pasado por props de ItemListCard
         <>  
             <div className="containerCard">
                 <div className="boxCard">

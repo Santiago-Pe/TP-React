@@ -5,7 +5,9 @@ import getFetch from "../../Services/getFetch"
 
 const ItemListContainer = (props) =>
 {
+    //Seteo mi product en un array vacio
     const [product, setProduct] = useState([]);
+    //Seteo mi estado loading en true
     const [loading, setLoading] = useState(true);
 
     const {id} = useParams ()
@@ -14,6 +16,7 @@ const ItemListContainer = (props) =>
     {
         if(id)
         {
+            //Filtro mi array traido con getFetch por los Id segun su categoria. Y lo seteo en product (que era un array vacio)
             getFetch
                 .then( res =>
                     {
@@ -22,7 +25,7 @@ const ItemListContainer = (props) =>
                     }
                 )
                 .catch(err => alert(`Error: ${err}` ))
-                .finally(() => setLoading((false)))
+                .finally(() => setLoading((false))) //Cuando finalize mi getFetch cambia mi estado de lodaing a "false"
         }
         else
         {
@@ -37,7 +40,7 @@ const ItemListContainer = (props) =>
             .finally(() => setLoading((false))) 
         }    
     }, [id])
-
+//Retorno un Estado loading que mientras sea true muestre el title  y cuando finalize mi get fetch lo convierta a false y  muestre los productos
     return(
         <>
             {loading ? <h3 className="titleH3">Cargando..</h3> : <ItemListCard product={product} />}

@@ -5,25 +5,25 @@ import  getFetch from "../../Services/getFetch"
 
 const ItemDetailContainer = () =>
 {
-    const [productsDetail, setProductsDetail] = useState([]);
-    // const [firstProductDetail, setFirstProductDetail] = useState({});
+    // Creo mi hook seteado en un array vacio
+    const [productDetail, setProductDetail] = useState([]);
 
-    const {id}  = useParams();
+    const {id}  = useParams(); //Parametro que uso para buscar mi objeto
     
     useEffect(()=>
     {
         getFetch
         .then( resp =>
         {
-           setProductsDetail(resp.find(pd => pd.id === id))
+           setProductDetail(resp.find(pd => pd.id === id)) //Me busca el objeto por el id y lo setea en producDetail
         })
         .catch(err => alert(`Error: ${err}`))
-        .finally(()=> console.log("Todos los datos se han cargado"))
+        .finally(()=> console.log("Todos los datos se han cargado")) 
         
 
     }, [id]);
     return(
-        <ItemDetail productDetail={productsDetail}/>
+        <ItemDetail productDetail={productDetail}/>
     )
 }
 

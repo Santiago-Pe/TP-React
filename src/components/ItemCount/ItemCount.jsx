@@ -7,10 +7,12 @@ import "./itemCount.css"
 
 const ItemCount = ({initial, stock, onAdd}) =>
 {   
+    //Contador === count
     const [count , setCount] = useState (initial);
+    //Cambiador de boton (intercambiabiabilidad)
     const [buttonChange, setButtonChange] = useState(true);
 
-    // ------------- ItemCount inicio-----------------
+    // ------------- Aumentar count -----------------
     const handlerAdd = () =>
     {
         if (count === stock)
@@ -21,9 +23,9 @@ const ItemCount = ({initial, stock, onAdd}) =>
         {
             setCount(count + 1);
         }
-
       
     };
+      // ------------- Disminuir count -----------------
     const handlerRemove = () =>
     {
         if(count === initial )
@@ -35,12 +37,12 @@ const ItemCount = ({initial, stock, onAdd}) =>
             setCount(count - 1);
         }    
     };
-    // ------------- ItemCount Fin-----------------
+  
    
-    // ------------- Intercambiabilidad inicio-----------------
-   
+    // -------- Boton agregar al carrito ----------
     const ButtonAddToCart = () =>  
     {
+        // ----- Mensaje aclaratorio de si se agrega 1 o mas productos --------
         const messageAddToCart = ()=>
         {
             
@@ -53,17 +55,19 @@ const ItemCount = ({initial, stock, onAdd}) =>
         )
     }
 
+    //--------- Boton ir al carrito ----------
+
     const ButtonGoToCart = () =>
     {
         return ( <button className="btnGeneral" onClick={() => alert("yendo al carrito")}>Ir a mi carrito</button>)
     }
+    //------- Manejo de botones --------
     const handleButton = () =>
     {
-        onAdd(count)
-        setCount(initial)
-        setButtonChange(false)
+        onAdd(count) // Guardo mi valor de count
+        setCount(initial) //Seteo en valor inicial mi count
+        setButtonChange(false) //Cambio booleano que habilita el boton "Ir a mi carrito"
     }
-    // ------------- Intercambiabilidad Fin----------------
 
     return(
             <div className="buttonCartWidgetBox">    

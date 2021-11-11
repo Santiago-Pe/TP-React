@@ -1,21 +1,34 @@
 import { useCartContext } from '../../../../CartContext/CartContext'
-// import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import ItemCount from "../../../ItemCount/ItemCount"
 import "./itemDetail.css"
 
+
 const ItemDetail = ({productDetail}) =>
 {
-    const [count, setCount] = useState(0)
-    const {cartList, showList} = useCartContext ()
-    console.log(cartList);
-    console.log(showList);
-
+    //----Declaro mi cantidad inicial en 1--------
+    const [count, setCount] = useState(1); 
+    //------Traigo la funcion AddToCart (agregar al carrito)------
+    const {addToCart} = useCartContext();
+    
+    //--- Funcion onAdd ---
     const onAdd = (cant)=>
     {
-        setCount(cant)
-        console.log(cant)
+        //seteo mi cant en el valor que figure.
+        setCount(cant); 
+        //Agrego al carrito: nombre, cantidad, precio y precio total de producto.
+        addToCart({ 
+                    id: productDetail.id, 
+                    clase: productDetail.clase, 
+                    nombre: productDetail.nombre, 
+                    precio: productDetail.precio, 
+                    cantidad: cant, 
+                    img: productDetail.img
+                });
+        
+        
     }
+    console.log( typeof addToCart)
     return(
        <>
             <div className="containerDetail">
@@ -38,7 +51,7 @@ const ItemDetail = ({productDetail}) =>
                         Encontra los mejores precios en <i><b>Vineria Online</b></i>
                     </p>
                     <hr />    
-                    <ItemCount initial={1} stock={productDetail.stock} onAdd={onAdd}/>
+                    <ItemCount initial={count} stock={productDetail.stock} onAdd={onAdd}/>
                      
                 </div>
             </div>  
