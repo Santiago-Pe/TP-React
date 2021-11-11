@@ -4,6 +4,7 @@ import Inicio from "./components/Inicio/Inicio";
 import ItemListContainer from "./components/Container/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./components/Container/ItemDetailContainer/ItemDetailContainer"
 import CartContextProvider from "./CartContext/CartContext";
+import Cart from "./components/Cart/Cart"
 function App() 
 {
   return (
@@ -19,7 +20,8 @@ function App()
               
             </Route> 
             <Route excat path="/categoria/:id"  exact component={ItemListContainer}/>   
-            <Route exact path="/detalle/:id" component={ItemDetailContainer}/>   
+            <Route exact path="/detalle/:id" component={ItemDetailContainer}/>  
+            <Route exact path="/cart" component={Cart}/>
           </Switch>  
           {/* Footer */}
         </BrowserRouter>
