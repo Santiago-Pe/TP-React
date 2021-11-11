@@ -12,6 +12,7 @@ const ItemCount = ({initial, stock, onAdd}) =>
     //Cambiador de boton (intercambiabiabilidad)
     const [buttonChange, setButtonChange] = useState(true);
 
+
     // ------------- Aumentar count -----------------
     const handlerAdd = () =>
     {
@@ -46,26 +47,24 @@ const ItemCount = ({initial, stock, onAdd}) =>
         const messageAddToCart = ()=>
         {
             
-            count === 1 ? alert(`Se han agregado ${count} producto al carrito`) : 
-            alert(`Se han agregado ${count} productos al carrito`)
+            count === 1 ? alert( `Se han agregado ${count} producto al carrito`) : 
+            alert(`Se han agregado ${count} productos al carrito` )
     
         }
-        return(
-        <button className="btnGeneral" onClick={messageAddToCart}>Agregar al carrito</button>
-        )
+        return ( <button className="btnGeneral" onClick={messageAddToCart}>Agregar al carrito</button> )
     }
 
     //--------- Boton ir al carrito ----------
 
     const ButtonGoToCart = () =>
     {
-        return ( <button className="btnGeneral" onClick={() => alert("yendo al carrito")}>Ir a mi carrito</button>)
+        return ( <button className="btnGeneral">Ir a mi carrito</button> )
     }
     //------- Manejo de botones --------
     const handleButton = () =>
     {
         onAdd(count) // Guardo mi valor de count
-        setCount(initial) //Seteo en valor inicial mi count
+        setCount(0) //Seteo en valor inicial mi count
         setButtonChange(false) //Cambio booleano que habilita el boton "Ir a mi carrito"
     }
 
@@ -77,14 +76,7 @@ const ItemCount = ({initial, stock, onAdd}) =>
                 <div className="countBox">
                     <p>{count}</p>
                     <div onClick={handleButton}>
-                        {
-                        buttonChange ?
-                        <ButtonAddToCart/> 
-                        :
-                        <Link to={"/cart"}>
-                            <ButtonGoToCart/>
-                        </Link>
-                        }
+                        { buttonChange ? <ButtonAddToCart/> : <Link to={"/cart"}>  <ButtonGoToCart/>  </Link> }
                     </div>
                 </div>
                 <button className="buttonCartW" onClick = {handlerAdd}>
