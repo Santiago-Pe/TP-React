@@ -1,11 +1,15 @@
 import{Link} from "react-router-dom"
 import CartWidget from "../Icons/IconCartWidget"
 import "./navBarCw.css"
+import { useCartContext } from "../../CartContext/CartContext"
 
 
 
 const NavBar = () => 
 {
+    const {cantProdAcum} = useCartContext()
+    const cantAcum = cantProdAcum()
+    
     return (
     // Cambiar los links de los "a" cuando esten las paginas creadas
         <header>
@@ -39,7 +43,10 @@ const NavBar = () =>
                     </div>
                 </ul>
                 <div className="boxCartWidget">
-                    <Link to={`/cart`}> <CartWidget className="cartWidget"/></Link>
+                    <Link to={`/cart`}> 
+                    <label><CartWidget className="cartWidget"/></label>
+                    <label>{cantAcum}</label>
+                    </Link>
                 </div>  
             </nav>
         </header>

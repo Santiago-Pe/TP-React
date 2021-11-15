@@ -16,56 +16,44 @@ const CartContextProvider = ({children}) =>
         if(!itemFindCart)
         {
             //Si la igualdad es falsa, meter el producto en el carrito
-            setCartList(
-                [
-                    ...cartList,
-                    itemsAdded
-                ]
-            )
+            setCartList( [...cartList, itemsAdded] )       
         }
         else
         {
-            itemFindCart.cantidad = itemFindCart.cantidad + itemsAdded.cantidad //A mi producto (objeto de array) que comparte mi ID le sumo la cantidad que se especifica en count
-            setCartList(
-                [
-                    ...cartList
-                ]
-            )
+            //En caso de que en cartList el producto ya se encuentre, solo le aumentara la cantidad y lo seteara.
+            itemFindCart.cantidad = itemFindCart.cantidad + itemsAdded.cantidad 
+            setCartList( [...cartList] )
         }
     }
     //Remover un item del carrito
-    const removeItemCart = itemsRemoveCart =>
+    const removeItemCart = idItemsRemoveCart =>
     {
-        setCartList(cartList.filter(itemSerch => itemSerch.id !== itemsRemoveCart))
-        console.log("producto eliminado")
+        //Que me filtre todos los id distitnos al seleccionado (eliminadolo asi del carro).
+        setCartList(cartList.filter(itemSerch => itemSerch.id !== idItemsRemoveCart))
     }
-    //Elminar 1 unidad de un producto de mi carrito
-    // const removeItemUnity = itemRemoveUnity =>
-    // {
-    //     const itemFindCartUnity = cartList.filter(itfcu => itfcu.id === itemRemoveUnity.id);
-    //     if(itemFindCartUnity.cantidad >= 1)
-    //     {
-    //         itemFindCartUnity.cantidad =   itemFindCartUnity.cantidad - 1;
-    //         setCartList(
-    //             [
-    //                 ...cartList
-    //             ]
-    //         )
-    //     }
-    //     else
-    //     {
-    //         alert("Ya no hay unidades para elminiar")
-    //     }
-        
-    // }
     //Limpiar carrito
     const cleanCart = () =>
     {
-        setCartList([]); //Seteo mi array de cartList con uno vacio
+        //Seteo mi array de cartList con uno vacio
+        setCartList([]); 
     }
+    //Sumador de precio
+    const calculateCumulativePrice = () =>
+    { 
+        const cumulativePrice = (acum, prod) => (acum + (prod.precio * prod.cantidad));
+        return(cartList.reduce(cumulativePrice ,0));
+    }
+    //Acumulador de cantidad de productos ---> cartwidget
+    const cantProdAcum = () =>
+    {
+       const prodAcum = ((acum, prod) => (acum + prod.cantidad));
+        return (cartList.reduce(prodAcum, 0));
+    }
+    //Sacarlo luego
+    console.log(cartList)
 
     return(
-        <CartContext.Provider value={{cartList, addToCart, removeItemCart, cleanCart}}>
+        <CartContext.Provider value={{cartList, addToCart, removeItemCart, cleanCart, calculateCumulativePrice, cantProdAcum}}>
             {children}
         </CartContext.Provider>
     )
