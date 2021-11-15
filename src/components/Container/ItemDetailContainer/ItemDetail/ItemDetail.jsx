@@ -20,12 +20,8 @@ const ItemDetail = ({productDetail}) =>
         //Agrego al carrito: nombre, cantidad, precio y precio total de producto.
         addToCart(
                     { 
-                        id: productDetail.id, 
-                        clase: productDetail.clase, 
-                        nombre: productDetail.nombre, 
-                        precio: productDetail.precio, 
-                        cantidad: cant, 
-                        img: productDetail.img
+                        ... productDetail,
+                        cantidad: cant,
                     }
                 );
     }

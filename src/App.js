@@ -19,7 +19,7 @@ function App()
               {/*Poner el ItemListContainer en otro lado y solo mostrar 3 cards  */}
               
             </Route> 
-            <Route excat path="/categoria/:id"  exact component={ItemListContainer}/>   
+            <Route excat path="/categoria/:categoria" component={ItemListContainer}/>   
             <Route exact path="/detalle/:id" component={ItemDetailContainer}/>  
             <Route exact path="/cart" component={Cart}/>
           </Switch>  

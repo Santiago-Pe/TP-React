@@ -1,30 +1,33 @@
 import { useState, useEffect } from "react"
 import { useParams } from 'react-router-dom'
 import ItemDetail from "./ItemDetail/ItemDetail";
-import  getFetch from "../../Services/getFetch"
+import  getFetchICD from "../../Services/getFetch"
 
 const ItemDetailContainer = () =>
 {
     // Creo mi hook seteado en un array vacio
     const [productDetail, setProductDetail] = useState([]);
+    const [loadingItemDetail, setLoadingItemDetail] = useState(true);
 
     const {id}  = useParams(); //Parametro que uso para buscar mi objeto
     
     useEffect(()=>
     {
-        getFetch
+        getFetchICD
         .then( resp =>
         {
            setProductDetail(resp.find(pd => pd.id === id)) //Me busca el objeto por el id y lo setea en producDetail
         })
         .catch(err => alert(`Error: ${err}`))
-        .finally(()=> console.log("Todos los datos se han cargado")) 
+        .finally(()=> setLoadingItemDetail((false))) //NO FUNCIONA MUY BIEN. NO ME LO CARGA EN EL TIEMPO QUE LO REQUIERO EN MI GETFFETCH
         
 
     }, [id]);
     return(
-        <ItemDetail productDetail={productDetail}/>
-    )
+        <>
+            {loadingItemDetail ? <h3>Cargando información</h3> : <ItemDetail productDetail={productDetail}/>}
+        </>
+        )
 }
 
 export default ItemDetailContainer

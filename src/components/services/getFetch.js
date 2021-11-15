@@ -242,10 +242,15 @@ const productos =
 // });
 
 
-const getFetch = new Promise((resolve, reject)=>{
+export const getFetchICD = new Promise((resolve, reject)=>{
+  setTimeout(()=>{
+    resolve(productos)
+}, 3000)
+});
+const getFetchIC = new Promise((resolve, reject)=>{
     setTimeout(()=>{
       resolve(productos)
   }, 2000)
   });
 
-export default getFetch
+export default getFetchIC
