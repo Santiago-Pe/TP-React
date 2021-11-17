@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemListCard from "./ItemList/ItemListCard";
-import getFetchIC from "../../Services/getFetch"
+import getFirestore from "../../Services/getFirestore"
 
 const ItemListContainer = (props) =>
 {
@@ -12,38 +12,61 @@ const ItemListContainer = (props) =>
 
     const {categoria} = useParams ()
 
-    useEffect (()=>
+    const [products, setProducts] = useState([]);
+
+    // useEffect (()=>
+    // {
+    //     if(categoria)
+    //     {
+    //         //Filtro mi array traido con getFetch por los Id segun su categoria. Y lo seteo en product (que era un array vacio)
+    //         getFetchIC
+    //             .then( res =>
+    //                 {
+    //                 console.log('Llamada a la API')
+    //                 setProduct(res.filter(prod => prod.categoria === categoria))
+    //                 }
+    //             )
+    //             .catch(err => alert(`Error: ${err}` ))
+    //             .finally(() => setLoadingItemContainer((false))) //Cuando finalize mi getFetch cambia mi estado de lodaing a "false"
+    //     }
+    //     else
+    //     {
+    //         getFetchIC
+    //         .then( res =>
+    //             {
+    //             console.log('Llamada a la API')
+    //             setProduct(res)
+    //             }
+    //         )
+    //         .catch(err => alert(`Error: ${err}` ))
+    //         .finally(() => setLoadingItemContainer((false))) 
+    //     }    
+    // }, [categoria])
+    useEffect(()=>
     {
-        if(categoria)
-        {
-            //Filtro mi array traido con getFetch por los Id segun su categoria. Y lo seteo en product (que era un array vacio)
-            getFetchIC
-                .then( res =>
-                    {
-                    console.log('Llamada a la API')
-                    setProduct(res.filter(prod => prod.categoria === categoria))
-                    }
-                )
-                .catch(err => alert(`Error: ${err}` ))
-                .finally(() => setLoadingItemContainer((false))) //Cuando finalize mi getFetch cambia mi estado de lodaing a "false"
-        }
-        else
-        {
-            getFetchIC
-            .then( res =>
-                {
-                console.log('Llamada a la API')
-                setProduct(res)
-                }
-            )
-            .catch(err => alert(`Error: ${err}` ))
-            .finally(() => setLoadingItemContainer((false))) 
-        }    
-    }, [categoria])
+        const db = getFirestore();
+        const dbQuery = db.collection('items').get(); //Is is PROMISE-> TRAGIGO TODO
+        // const dbQuery = db.collection('items').where('precio', '>', 300).get() //TRAIGO CON CONDICION (como filtro)
+        dbQuery
+        .then(resp => setProducts(resp.docs.map(prod => ({id: prod.id, ...prod.data()}) )) )
+        .catch(err => alert(`Error: ${err}` ))
+        .finally(() => setLoadingItemContainer(false));
+       
+      
+
+        //---------Un ejemplo para traer uno solo-------
+        // const dbQuery = db.collection('items').doc("5ydOYfho5pHkccOqDcUh").get() //TRAIGO UNO SOLO
+        //dbQuery
+        // .then(resp => setProduct( {id: resp.id, ...resp.data()} ))
+    },[categoria])
+   
+    
+    // console.log(products)
+
 //Retorno un Estado loading que mientras sea true muestre el title  y cuando finalize mi get fetch lo convierta a false y  muestre los productos
     return(
         <>
-            {loadingItemContainer ? <h3 className="titleH3">Cargando..</h3> : <ItemListCard product={product} />}
+            {loadingItemContainer ? <h3 className="titleH3">Cargando..</h3> : <ItemListCard products={products} />}
         </>    
     )
 }

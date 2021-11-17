@@ -29,7 +29,7 @@ const ItemDetail = ({productDetail}) =>
     return(
        <>
             <div className="containerDetail">
-                <img className="imgDetail" src={productDetail.img} alt="Imagen de Jack Daniels Honey"/>
+                <img className="imgDetail" src={productDetail.img} alt={`Imagen de ${productDetail.nombre}`}/>
                 <div className="textDetailBox">
                     <h4>{productDetail.categoria}</h4>
                     <hr />  
