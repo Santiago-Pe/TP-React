@@ -25,6 +25,7 @@ const ItemDetail = ({productDetail}) =>
                     }
                 );
     }
+    console.log(productDetail)
     
     return(
        <>
@@ -52,6 +53,7 @@ const ItemDetail = ({productDetail}) =>
                      
                 </div>
             </div>  
+            Soy Itemdetail
        </>
     )
 }

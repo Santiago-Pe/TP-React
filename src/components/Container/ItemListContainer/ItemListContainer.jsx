@@ -13,35 +13,6 @@ const ItemListContainer = (props) =>
     const {categoria} = useParams ()
 
     const [products, setProducts] = useState([]);
-
-    // useEffect (()=>
-    // {
-    //     if(categoria)
-    //     {
-    //         //Filtro mi array traido con getFetch por los Id segun su categoria. Y lo seteo en product (que era un array vacio)
-    //         getFetchIC
-    //             .then( res =>
-    //                 {
-    //                 console.log('Llamada a la API')
-    //                 setProduct(res.filter(prod => prod.categoria === categoria))
-    //                 }
-    //             )
-    //             .catch(err => alert(`Error: ${err}` ))
-    //             .finally(() => setLoadingItemContainer((false))) //Cuando finalize mi getFetch cambia mi estado de lodaing a "false"
-    //     }
-    //     else
-    //     {
-    //         getFetchIC
-    //         .then( res =>
-    //             {
-    //             console.log('Llamada a la API')
-    //             setProduct(res)
-    //             }
-    //         )
-    //         .catch(err => alert(`Error: ${err}` ))
-    //         .finally(() => setLoadingItemContainer((false))) 
-    //     }    
-    // }, [categoria])
     useEffect(()=>
     {
         const db = getFirestore();
