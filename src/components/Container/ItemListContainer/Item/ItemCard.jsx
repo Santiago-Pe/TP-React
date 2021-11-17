@@ -13,7 +13,7 @@ const ItemCard = ({prod}) =>
                     </Link>
 
                     <h4 className="titleH4">{prod.categoria}</h4>
-                    <p>{`Aprovehca y llevate un ${prod.nombre} de la manera mas rapida`}</p>    
+                    <p>Aprovehca y llevate un <b>{prod.nombre}</b> de la manera mas rapida</p>    
                     <Link to={`/detalle/${prod.id}`}>
                         Ver Detalle
                     </Link> 
