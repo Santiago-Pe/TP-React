@@ -7,9 +7,7 @@ import "./itemCount.css"
 
 const ItemCount = ({initial, stock, onAdd}) =>
 {   
-    //Contador === count
     const [count , setCount] = useState (initial);
-    //Cambiador de boton (intercambiabiabilidad)
     const [buttonChange, setButtonChange] = useState(true);
 
 
@@ -43,7 +41,6 @@ const ItemCount = ({initial, stock, onAdd}) =>
     // -------- Boton agregar al carrito ----------
     const ButtonAddToCart = () =>  
     {
-        // ----- Mensaje aclaratorio de si se agrega 1 o mas productos --------
         const messageAddToCart = ()=>
         {
             
@@ -63,9 +60,9 @@ const ItemCount = ({initial, stock, onAdd}) =>
     //------- Manejo de botones --------
     const handleButton = () =>
     {
-        onAdd(count) // Guardo mi valor de count
-        setCount(0) //Seteo en valor inicial mi count
-        setButtonChange(false) //Cambio booleano que habilita el boton "Ir a mi carrito"
+        onAdd(count)
+        setCount(0) 
+        setButtonChange(false) 
     }
 
     return(
