@@ -6,18 +6,14 @@ import "./itemDetail.css"
 
 const ItemDetail = ({productDetail}) =>
 {
-    //----Declaro mi cantidad inicial en 1--------
     const [count, setCount] = useState(1); 
-    //------Traigo la funcion AddToCart (agregar al carrito)------
     const {addToCart} = useCartContext();
 
     
     //--- Funcion onAdd ---
     const onAdd = (cant)=>
     {
-        //seteo mi cant en el valor que figure.
         setCount(cant); 
-        //Agrego al carrito: nombre, cantidad, precio y precio total de producto.
         addToCart(
                     { 
                         ... productDetail,
@@ -25,7 +21,6 @@ const ItemDetail = ({productDetail}) =>
                     }
                 );
     }
-    console.log(productDetail)
     
     return(
        <>

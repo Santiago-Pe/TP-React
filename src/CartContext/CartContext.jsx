@@ -12,7 +12,6 @@ const CartContextProvider = ({children}) =>
     {
         //Encontrar si el id del producto que entra es igual a algun id que ya este en el array
         const itemFindCart = cartList.find(itfc => itfc.id === itemsAdded.id);
-       
         if(!itemFindCart)
         {
             //Si la igualdad es falsa, meter el producto en el carrito
@@ -28,32 +27,36 @@ const CartContextProvider = ({children}) =>
     //Remover un item del carrito
     const removeItemCart = idItemsRemoveCart =>
     {
-        //Que me filtre todos los id distitnos al seleccionado (eliminadolo asi del carro).
         setCartList(cartList.filter(itemSerch => itemSerch.id !== idItemsRemoveCart))
     }
     //Limpiar carrito
     const cleanCart = () =>
     {
-        //Seteo mi array de cartList con uno vacio
         setCartList([]); 
     }
-    //Sumador de precio
-    const calculateCumulativePrice = () =>
+    //Acumulador precios
+    const calculateTotalPriece = () =>
     { 
         const cumulativePrice = (acum, prod) => (acum + (prod.precio * prod.cantidad));
         return(cartList.reduce(cumulativePrice ,0));
     }
-    //Acumulador de cantidad de productos ---> cartwidget
+    //Acumulador cantidad productos
     const cantProdAcum = () =>
     {
        const prodAcum = ((acum, prod) => (acum + prod.cantidad));
         return (cartList.reduce(prodAcum, 0));
     }
-    //Sacarlo luego
-    console.log(cartList)
+  
 
     return(
-        <CartContext.Provider value={{cartList, addToCart, removeItemCart, cleanCart, calculateCumulativePrice, cantProdAcum}}>
+        <CartContext.Provider value={{
+            cartList, 
+            addToCart, 
+            removeItemCart, 
+            cleanCart, 
+            calculateTotalPriece, 
+            cantProdAcum
+            }}>
             {children}
         </CartContext.Provider>
     )

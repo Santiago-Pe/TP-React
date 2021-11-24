@@ -1,14 +1,20 @@
 import { useCartContext } from "../../CartContext/CartContext";
+// import getFirestore from "../Services/getFirestore";
 
 const Cart = () =>
 {
-    const {cartList, removeItemCart, cleanCart, calculateCumulativePrice} = useCartContext()
+    //HOOKS
+    const {cartList, removeItemCart, cleanCart, calculateTotalPriece} = useCartContext(); //Funcionalidades y datos de mi cartcontext
+
+    //-------------------------------------------------------------------------------------------------------//
+
+    //FUNCIONES
     return(
         <div className="containerCart">
             {cartList.length > 0 ?
                 <div>
                     <button className="btnCleanCart" onClick={() => cleanCart()}>Vaciar carrito</button> 
-                    <label>{`Su precio acumulado: ${calculateCumulativePrice()}`}</label>
+                    <label>{`Su precio acumulado: ${calculateTotalPriece()}`}</label>
                 </div>
             : 
                 <div className="textCartempty">
@@ -32,10 +38,7 @@ const Cart = () =>
                     <button className="btnRemoveItemCart" onClick={() => removeItemCart(itemCardList.id)}>Eliminar producto de carrito</button>
                 </div>
                 )
-            } 
-            {/* Aca vamos a insertar intercambiabilidad */}
-           
-       
+            }
         </div>
     )
 }
