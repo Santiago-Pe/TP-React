@@ -1,97 +1,113 @@
+/* MOBILE */
 /* NavBar */
-.navbar
+.nvb
 {
+    background-color: red;
+    padding: 20px;
+    display: block;
+    color: white;
+    cursor: pointer;
+    font-size: 1.5rem;
     width: 100%;
-    height: auto;
-    background-color: #c26400;
 
-    padding: 0.3rem;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    align-items: center;
 }
-.navbar ul
+/* DESKTOP */
+@media only screen and (min-width: 1200px)
 {
-    list-style: none;
-}
-.navbarMain
-{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
+    .navbar
+    {
+        width: 100%;
+        height: auto;
+        background-color: #c26400;
 
-    margin-left: 1rem;
-    margin-right: 1rem;
-}
-.navbarMain > li
-{
-    position: relative;
-    display: inline-block;
-} 
-.navbarMain > li > a
-{
-    display: block;
-    padding: 1rem 1rem;
+        padding: 0.3rem;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+    }
+    .navbar ul
+    {
+        list-style: none;
+    }
+    .navbarMain
+    {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
 
-    color: white;
-    font-family: "Quicksand";
-    text-decoration: none;
-}
-.navbarMain > li > a:hover
-{
-    background-color: #f3932d;
-    border-radius: 8px;
-    transition: all .10s;
-}
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .navbarMain > li
+    {
+        position: relative;
+        display: inline-block;
+    } 
+    .navbarMain > li > a
+    {
+        display: block;
+        padding: 1rem 1rem;
 
-/* SubMenu */
-.subNavbarMain
-{
-    position: absolute;
-    background-color:#ffffff;
-    width: auto;
-    border-radius: 8px;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 1s;
+        color: white;
+        font-family: "Quicksand";
+        text-decoration: none;
+    }
+    .navbarMain > li > a:hover
+    {
+        background-color: #f3932d;
+        border-radius: 8px;
+        transition: all .10s;
+    }
 
-    display: flex;
-    flex-direction: row;
-}
-.subNavbarMain li a 
-{
-    display: block;
-    padding: 0.5rem;
-    color:  #c26400;
-    font-family: "Quicksand";
-    text-decoration: none;   
-}
-.subNavbarMain li a:hover
-{
-    background-color: #c26400;
-    border-radius: 8px;
-    transition: all .3s;
-    color: white;
-}
+    /* SubMenu */
+    .subNavbarMain
+    {
+        position: absolute;
+        background-color:#ffffff;
+        width: auto;
+        border-radius: 8px;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 1s;
 
-.navbarMain li:hover .subNavbarMain
-{
-    visibility: visible;
-    opacity: 1;
-}
-/* ICONS */
+        display: flex;
+        flex-direction: row;
+    }
+    .subNavbarMain li a 
+    {
+        display: block;
+        padding: 0.5rem;
+        color:  #c26400;
+        font-family: "Quicksand";
+        text-decoration: none;   
+    }
+    .subNavbarMain li a:hover
+    {
+        background-color: #c26400;
+        border-radius: 8px;
+        transition: all .3s;
+        color: white;
+    }
 
-.logo
-{
-    width: 70px;
-    height: 50px;
-}
-.cartWidget
-{
-    width: 40px;
-    height: 30px;
-    color: white;
+    .navbarMain li:hover .subNavbarMain
+    {
+        visibility: visible;
+        opacity: 1;
+    }
+    /* ICONS */
+
+    .logo
+    {
+        width: 70px;
+        height: 50px;
+    }
+    .cartWidget
+    {
+        width: 40px;
+        height: 30px;
+        color: white;
+    }
 }
