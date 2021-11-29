@@ -5,7 +5,7 @@ export const useCartContext = () => useContext(CartContext)
 
 const CartContextProvider = ({children}) =>
 {
-    const [cartList, setCartList] = useState([]);
+    const [cartList, setCartList] = useState([]);//Array
 
     //Agregar al carrito
     const addToCart = itemsAdded =>
@@ -15,6 +15,7 @@ const CartContextProvider = ({children}) =>
         if(!itemFindCart)
         {
             //Si la igualdad es falsa, meter el producto en el carrito
+       
             setCartList( [...cartList, itemsAdded] )       
         }
         else

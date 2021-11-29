@@ -13,20 +13,11 @@ const ItemListContainer = (props) =>
     useEffect(()=>
     {
         const db = getFirestore();
-        const dbQuery = db.collection('items').get();
-        // const dbQuery = db.collection('items').where('precio', '>', 300).get() //TRAIGO CON CONDICION (como filtro)
+        const dbQuery = categoria ? db.collection("items").where("categoria", "==", categoria).get() : db.collection('items').get();
         dbQuery
         .then(resp => setProducts(resp.docs.map(prod => ({id: prod.id, ...prod.data()}) )) )
         .catch(err => alert(`Error: ${err}` ))
         .finally(() => setLoadingItemContainer(false));
-       
-      
-
-        //---------Un ejemplo para traer uno solo-------
-        // const dbQuery = db.collection('items').doc("5ydOYfho5pHkccOqDcUh").get() //TRAIGO UNO SOLO
-        //dbQuery
-        // .then(resp => setProduct( {id: resp.id, ...resp.data()} ))
-
     },[categoria])
    
     return(
