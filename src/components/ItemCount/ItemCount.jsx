@@ -66,20 +66,22 @@ const ItemCount = ({initial, stock, onAdd}) =>
     }
 
     return(
-            <div className="buttonCartWidgetBox">    
-                <button className="buttonCartW" onClick = {handlerRemove}>
+        <div className="containerItemCount">
+            <div className="containerBtnRemoveAdd">    
+                <button className="btnCount" onClick = {handlerRemove}>
                     -
                 </button>
                 <div className="countBox">
                     <p>{count}</p>
-                    <div onClick={handleButton}>
-                        { buttonChange ? <ButtonAddToCart/> : <Link to={"/cart"}>  <ButtonGoToCart/>  </Link> }
-                    </div>
                 </div>
-                <button className="buttonCartW" onClick = {handlerAdd}>
+                <button className="btnCount" onClick = {handlerAdd}>
                     +
                 </button>
+            </div>
+            <div onClick={handleButton}>
+                        { buttonChange ? <ButtonAddToCart/> : <Link to={"/cart"}>  <ButtonGoToCart/>  </Link> }
             </div> 
+        </div>    
     )
 }
 

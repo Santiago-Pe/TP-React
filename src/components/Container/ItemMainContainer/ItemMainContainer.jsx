@@ -1,28 +1,28 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import ItemListCard from "./ItemList/ItemListCard";
+import ItemMainList from "./ItemMainList/ItemMainList";
 import getFirestore from "../../Services/getFirestore"
 
-const ItemListContainer = (props) =>
+const ItemMainContainer = (props) =>
 {
     //HOOKS
     const [loadingItemContainer, setLoadingItemContainer] = useState(true);
-    const {categoria} = useParams ()
+    const {idInicio} = useParams ()
     const [products, setProducts] = useState([]);
 
     useEffect(()=>
-    {  
+    {
         const db = getFirestore();
-        const dbQuery = categoria ? db.collection("items").where("categoria", "==", categoria).get() : db.collection('items').get();
+        const dbQuery = idInicio ? db.collection("items").where("inicio", "==", idInicio).get() : alert("no se cargo el array");
         dbQuery
         .then(resp => setProducts(resp.docs.map(prod => ({id: prod.id, ...prod.data()}) )) )
         .catch(err => alert(`Error: ${err}` ))
         .finally(() => setLoadingItemContainer(false));
-    },[categoria])
-   
+    },[idInicio])
+//    <ItemListCard products={products}
     return(
-        <>  
-            {loadingItemContainer ? 
+        <>
+             {loadingItemContainer ? 
                                     <div className="containerLoading">
                                         <div class="lds-ellipsis">
                                             <div></div>
@@ -31,13 +31,9 @@ const ItemListContainer = (props) =>
                                             <div></div>
                                         </div> 
                                     </div>    
-                                    : <ItemListCard products={products} />}
+                                    : <ItemMainList  products={products}/>}
         </>    
     )
 }
 
-export default ItemListContainer
-
-
-
-
+export default ItemMainContainer

@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { useCartContext } from "../../CartContext/CartContext";
+import { Link } from "react-router-dom";
+import {FaTrashAlt} from "react-icons/fa"
 import firebase from 'firebase';
 import 'firebase/firestore';
 import getFirestore from "../Services/getFirestore";
+import "./cart.css"
 
 const Cart = () =>
 {
@@ -58,11 +61,13 @@ const Cart = () =>
             :   
                 orderId === ""
             ?
-                <div className="textCartempty">
+                <div className="containerEmptyCart">
                     <h3>Carrito de compras</h3>
-                    <p>No hay productos actualmente en tu carrito.</p>
+                    <p>Ups! El carrito esta vacio :(</p>
                     <p>Ve a ver nuestros productos</p>
-                    <button>Ver productos</button>
+                    <Link to={"/categoria"}>
+                    <button className="btnSeeProd">Ver productos</button>
+                    </Link>
                 </div>
             :  
                 <div>
@@ -70,29 +75,36 @@ const Cart = () =>
                     <p>Tu codigo de compras es: {orderId}</p>
                 </div>       
             }
-            {cartList.map(itemCardList =>  
-                <div key={itemCardList.id} className="boxInfoTotalCart">
-                    <div className="boxImgCart">
+            {cartList.map(itemCardList => 
+                <div key={itemCardList.id} className="containerCartDetail">
+                    <div className="imgCartDetail">
                         <img src={itemCardList.img} alt={`Imagen de ${itemCardList.nombre}`} />
                     </div>
-                    <div className="boxInfoCart">
+                    <div className="cartDetail">
                         <h4>{itemCardList.clase}</h4>
                         <p><b>Nombre:</b> {itemCardList.nombre}</p>
                         <p><b>Cantidad:</b> {itemCardList.cantidad}</p>
                         <p><b>Precio:</b> ${itemCardList.precio}</p>
                     </div>
-                    <button className="btnRemoveItemCart" onClick={() => removeItemCart(itemCardList.id)}>Eliminar producto de carrito</button>
-                </div>
+                    {/* <button className="btnRemoveItemCart" onClick={() => removeItemCart(itemCardList.id)}></button> */}
+                    <FaTrashAlt onClick={() => removeItemCart(itemCardList.id)} className="iconDelet"/>
+                </div> 
+                
+                
                 )
             }
-            <label>{`Su precio acumulado: ${calculateTotalPriece()}`}</label>
-            <h3>Completar los datos para finalizar la compra</h3> 
-            <form onChange={handleChange} onSubmit={creatOrder}>
-                <input type="text" name="nombre" placeholder="Ingrese su nombre completo" value={formData.nombre} />
-                <input type="number" name="telefono" placeholder="Ingrese su numero de telefono" value={formData.telefono} />
-                <input type="email" name="email" placeholder="Ingrese su email (ejemplo@gmail.com)" value={formData.email}/>
-                <button>Comprar</button>
-            </form>
+            <hr />
+             <div className="containerForm">
+                <h3>Completar los datos para finalizar la compra</h3>
+                <label>Total <span>${calculateTotalPriece()}</span></label> 
+                <form onChange={handleChange} onSubmit={creatOrder} className="formCart">
+                    <input type="text" name="nombre" placeholder="Ingrese su nombre completo" value={formData.nombre} />
+                    <input type="number" name="telefono" placeholder="Ingrese su numero de telefono" value={formData.telefono} />
+                    <input type="email" name="email" placeholder="Ingrese su email (ejemplo@gmail.com)" value={formData.email}/>
+                    <button>Comprar</button>
+                </form>
+            </div>    
+           
         </div>
     )
 }

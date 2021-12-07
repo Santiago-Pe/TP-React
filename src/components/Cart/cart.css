@@ -1,0 +1,156 @@
+/* Estilos del detalle de carrito Vacio */
+/* CONTAINER */
+.containerEmptyCart
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+
+    font-family: "Quicksand";
+    margin-top: 4rem;
+    margin-bottom: auto;
+}
+.containerEmptyCart > h3
+{
+    font-size: 30px;
+    margin-bottom: 2rem;
+}
+.containerEmptyCart > p
+{
+    font-size: 20px;   
+}
+
+/* BOTON */
+.btnSeeProd {
+    padding: 15px 15px;
+    margin-top: 1rem;
+
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    background-color:#fe8306;
+   }
+   
+   .btnSeeProd:hover {
+    background-color: #fff;
+    box-shadow: 0px 5px 10px rgba(248, 175, 8, 1);
+    color: #fe8306;
+    transform: translateY(-6px);
+   }
+   
+   .btnSeeProd:active {
+    transform: translateY(-6px);
+   }
+
+
+/* Estilos del Form */
+.containerForm
+{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Quicksand";
+
+    margin-bottom: 2rem;
+}
+.containerForm > h3
+{
+    font-size: 25px;
+}
+.containerForm > label
+{
+    font-size: 25px;
+    font-weight: 700;
+
+    background-color: white;
+    border-radius: 8px;
+    border: none;
+    padding: 10px 10px;
+
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+
+}
+.containerForm label > span
+{
+    color: green;
+    font-weight: 700;
+}
+.formCart
+{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    border: 1px solid #fe8306;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+}
+.formCart > input
+{
+    margin-bottom: 15px;
+    border: 1px solid #fe8306;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 10px;
+    width: 300px;
+    
+}
+.formCart > button
+{
+    margin-bottom: 15px;
+    margin-right: 2px;
+    border: 1px solid #fe8306;
+    color: #fe8306;
+    font-weight: 700;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100px;
+}
+.formCart > button:hover
+{
+    margin-bottom: 15px;
+    ;
+
+    background-color:#fe8306 ;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100px;
+}
+
+/* Estilos del detalle de carrito */
+.containerCartDetail
+{
+    display: flex;
+    flex-direction: row;
+    max-width: 1300px;
+    height: auto;
+}
+.imgCartDetail
+{
+    width: 150px;
+    height: 200px;
+}
+.imgCartDetail > img
+{
+    width: 100%;
+    height: auto;
+}

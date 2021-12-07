@@ -2,6 +2,7 @@ import { useCartContext } from '../../../../CartContext/CartContext'
 import { useState } from 'react'
 import ItemCount from "../../../ItemCount/ItemCount"
 import "./itemDetail.css"
+import { Link } from 'react-router-dom'
 
 
 const ItemDetail = ({productDetail}) =>
@@ -30,25 +31,25 @@ const ItemDetail = ({productDetail}) =>
                     <h4>{productDetail.categoria}</h4>
                     <hr />  
                     <p>
-                        Marca: <b>{productDetail.nombre}</b>
+                        <b>{productDetail.nombre}</b>
                     </p>
                     <p>
-                        Detalle: <b>{productDetail.detalle}</b>
+                        <b>{productDetail.detalle}</b>
                     </p>
-                        <p>Precio por unidad: <b>${productDetail.precio}</b></p>
+                    <p>    
+                        <b>${productDetail.precio}</b>
+                    </p>
                     <p>
                         Averigua todos los tragos que podes armar con unos ricos  
                         <i><a href={productDetail.link} target="en_blank">{productDetail.categoria}</a></i>
                     </p>
                     <p>
-                        Encontra los mejores precios en <i><b>Vineria Online</b></i>
+                        Encontra los mejores precios en <Link to={"/"}><i><b>Let's Toast</b></i></Link>
                     </p>
                     <hr />    
-                    <ItemCount initial={count} stock={productDetail.stock} onAdd={onAdd}/>
-                     
+                    <ItemCount initial={count} stock={productDetail.stock} onAdd={onAdd}/>   
                 </div>
             </div>  
-            Soy Itemdetail
        </>
     )
 }
