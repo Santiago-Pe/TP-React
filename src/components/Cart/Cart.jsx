@@ -82,9 +82,10 @@ const Cart = () =>
                     </div>
                     <div className="cartDetail">
                         <h4>{itemCardList.clase}</h4>
-                        <p><b>Nombre:</b> {itemCardList.nombre}</p>
-                        <p><b>Cantidad:</b> {itemCardList.cantidad}</p>
-                        <p><b>Precio:</b> ${itemCardList.precio}</p>
+                        <p><b>Nombre</b> {itemCardList.nombre}</p>
+                        <p><b>Cantidad</b> {itemCardList.cantidad}</p>
+                        <p><b>Precio</b> ${itemCardList.precio}</p>
+                        <p><b>Sub Total</b> ${()=> (itemCardList.precio * itemCardList.cantidad)}</p>
                     </div>
                     {/* <button className="btnRemoveItemCart" onClick={() => removeItemCart(itemCardList.id)}></button> */}
                     <FaTrashAlt onClick={() => removeItemCart(itemCardList.id)} className="iconDelet"/>
