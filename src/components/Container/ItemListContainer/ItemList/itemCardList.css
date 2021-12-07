@@ -1,8 +1,14 @@
 .containerGeneralCard
 {
-    width: 100%;
+    max-width: 1200px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+    margin: auto;
+    padding-bottom: 2rem;
+    
 
 }

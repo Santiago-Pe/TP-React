@@ -5,6 +5,7 @@ import  getFirestore from "../../Services/getFirestore"
 
 
 
+
 const ItemDetailContainer = () =>
 {
     //HOOKS
@@ -22,10 +23,19 @@ const ItemDetailContainer = () =>
         .catch(err => alert(`Error: ${err}`))
         .finally(()=> setLoadingItemDetail((false)))
              
-    },[])
+    },[id])
     return(
         <>
-            {loadingItemDetail ? <h3>Cargando información</h3> : <ItemDetail productDetail={productDetail}/>}
+            {loadingItemDetail ? 
+                                    <div className="containerLoading">
+                                        <div className="lds-ellipsis">
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                        </div> 
+                                    </div>    
+                                    : <ItemDetail productDetail={productDetail} />}
         </>
     )
 }

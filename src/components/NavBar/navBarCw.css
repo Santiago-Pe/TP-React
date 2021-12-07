@@ -1,24 +1,9 @@
-/* MOBILE */
-/* NavBar */
-.nvb
-{
-    background-color: red;
-    padding: 20px;
-    display: block;
-    color: white;
-    cursor: pointer;
-    font-size: 1.5rem;
-    width: 100%;
 
-}
-/* DESKTOP */
-@media only screen and (min-width: 1200px)
-{
     .navbar
     {
         width: 100%;
         height: auto;
-        background-color: #c26400;
+        background-color: #fe8306;
 
         padding: 0.3rem;
         display: flex;
@@ -53,11 +38,13 @@
 
         color: white;
         font-family: "Quicksand";
+        font-size: 20px;
         text-decoration: none;
     }
     .navbarMain > li > a:hover
     {
-        background-color: #f3932d;
+        background-color: #ffffff;
+        color: #fe8306;
         border-radius: 8px;
         transition: all .10s;
     }
@@ -80,34 +67,69 @@
     {
         display: block;
         padding: 0.5rem;
-        color:  #c26400;
-        font-family: "Quicksand";
-        text-decoration: none;   
+        color:  #fe8306;
+        font-family: "Quicksand"; 
+        font-size: 20px;
     }
     .subNavbarMain li a:hover
     {
-        background-color: #c26400;
+        background-color: #fe8306;
         border-radius: 8px;
         transition: all .3s;
-        color: white;
+        color: #ffffff;
     }
 
     .navbarMain li:hover .subNavbarMain
     {
         visibility: visible;
-        opacity: 1;
-    }
+        opacity: 1; 
+    } 
     /* ICONS */
-
-    .logo
+    .icons
     {
-        width: 70px;
-        height: 50px;
+        font-size: 40px;
+        color: #ffffff;
     }
-    .cartWidget
+    /* BOX DEL LOGO DE LA PAGINA */
+    .boxLogo
     {
-        width: 40px;
-        height: 30px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-left: 10px;
+    }
+    .boxLogo > p
+    {
+        font-size: 25px;
+        padding-left: 10px;
+        font-family: "Quicksand"; 
         color: white;
     }
-}
+    .boxLogo > p.word
+    {
+        color: #6d6a75;
+    }
+    /* BOX DEL CART + COUNT */
+    .boxCartWidget
+    {
+        display: flex;
+        flex-direction: row; 
+        align-items: center;
+        padding-right: 10px;
+    }
+    .boxCartWidget label
+    {
+        padding: 5px 10px;
+        margin-right: 10px;
+        background: white;
+        border-radius: 20px;
+        font-family: "Quicksand"; 
+        color: #000;
+        font-weight: 600;
+
+    }
+    /* LINKS GENERAL */
+    a
+    {
+        text-decoration: none;
+    }

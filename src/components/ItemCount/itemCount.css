@@ -1,62 +1,72 @@
-.buttonCartWidgetBox
+.containerItemCount
 {
-    margin-top:0.8rem;
-    padding: 0.2rem 0.5rem;
-
-    background-color: rgb(255, 255, 255);
-    border-radius: 8px;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+}
+.containerBtnRemoveAdd
+{   
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items:  center;
-    align-content: space-around;
+    align-items: center;
+    padding: 10px;
 }
 .countBox
 {
-    margin-left: 0.8rem;
-    margin-right: 0.8rem;
-
-    text-align: center;
-    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.countBox > p 
+{
     font-weight: 600;
-
+    font-size: 25px !important;
 }
-.buttonCartW
-{ 
-    width: 40px;
-    height: 30px;
-    
-    text-align: center;
+
+
+/* Botones */
+.btnCount
+{
+    padding: 5px 15px;
     font-size: 20px;
-    font-weight: 700;
-    color: white;
-
-    border-radius: 6px;
-    background-color: #1d3557;
+    font-weight: 900;
+    cursor: pointer;
+    outline: none;
+    color: #fe8306;
+    background-color: #ffff;
+    border-radius: 45px;
+    border: solid 2px #fe8306;
+}
+.btnCount:hover
+{
+    transform: translateY(-1px);
+}
+.btnGeneral {
+    padding: 10px 10px;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #fff;
     border: none;
-}
-.buttonCartW:hover
-{
-    background-color:  #457b9d;
-}
-
-.btnGeneral
-{
-    width: auto;
-    height: auto;
-    
-    padding: 0.5rem;
-    margin: 0.5rem;
-    
-    color: white;
-    text-align: center;
-    border-radius: 6px;
-    background-color: #1d3557;
-    border: none;  
-}
-.btnGeneral:hover
-{
-    background-color:  #457b9d;
-    color: white;
-}
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    background-color:#fe8306;
+   }
+   
+   .btnGeneral:hover {
+    background-color: #fff;
+    box-shadow: 0px 5px 10px rgba(248, 175, 8, 1);
+    color: #fe8306;
+    transform: translateY(-3px);
+   }
+   
+  .btnGeneral:active {
+    transform: translateY(-1px);
+   }

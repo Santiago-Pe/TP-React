@@ -8,7 +8,8 @@ const  ItemListCard = memo (
         console.log(products)
         return(
             <div className="containerGeneralCard">
-                 {products.map(prod=> <ItemCard key={prod.id} prod={prod}/>) }           
+
+                 {products.map(prod=> <ItemCard key={prod.id} prod={prod}/>) }        
             </div>
         )
     }
