@@ -14,7 +14,6 @@ function App()
           <NavBar/>  
           <Switch>
             <Route excat path="/inicio/:idInicio" component={ItemMainContainer}/>  
-            <Route excat path="/categoria" component={ItemListContainer}/>
             <Route excat path="/categoria/:categoria" component={ItemListContainer}/>   
             <Route exact path="/detalle/:id" component={ItemDetailContainer}/>  
             <Route exact path="/cart" component={Cart}/>
