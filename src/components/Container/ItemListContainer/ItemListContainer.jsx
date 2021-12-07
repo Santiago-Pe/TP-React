@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemListCard from "./ItemList/ItemListCard";
-import getFirestore from "../../Services/getFirestore"
+import getFirestore from "../../services/getFirestore"
 
 const ItemListContainer = (props) =>
 {

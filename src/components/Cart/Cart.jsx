@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import {FaTrashAlt} from "react-icons/fa"
 import firebase from 'firebase';
 import 'firebase/firestore';
-import getFirestore from "../Services/getFirestore";
+import getFirestore from "../services/getFirestore";
 import "./cart.css"
 
 const Cart = () =>
