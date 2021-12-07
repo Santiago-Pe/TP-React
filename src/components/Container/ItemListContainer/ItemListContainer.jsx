@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemListCard from "./ItemList/ItemListCard";
-import getFirestore from "../../Services/getFirestore"
+import getFirestore from "../../services/getFirestore"
 
 const ItemListContainer = (props) =>
 {
@@ -24,7 +24,7 @@ const ItemListContainer = (props) =>
         <>  
             {loadingItemContainer ? 
                                     <div className="containerLoading">
-                                        <div class="lds-ellipsis">
+                                        <div className="lds-ellipsis">
                                             <div></div>
                                             <div></div>
                                             <div></div>

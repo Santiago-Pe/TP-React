@@ -154,3 +154,8 @@
     width: 100%;
     height: auto;
 }
+.cartDetail
+{
+    display: flex;
+    flex-direction: row;
+}
