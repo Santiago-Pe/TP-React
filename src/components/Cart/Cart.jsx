@@ -19,8 +19,15 @@ const Cart = () =>
             email: ""
         }
     )
+    const[tableCart, setTableCart] = useState("activo");
+
 
     //FUNCIONES
+    const handlesTable = () =>
+    {
+        setTableCart("desactivado");
+        cleanCart();
+    }
     const creatOrder = (e) => 
     {
         e.preventDefault()
@@ -50,13 +57,15 @@ const Cart = () =>
             [e.target.name]: e.target.value
         })
     }
+    
+
     console.log(formData)
     return(
         <div className="containerCart">
             {cartList.length
             ?
-                <div>
-                    <button className="btnCleanCart" onClick={() => cleanCart()}>Vaciar carrito</button>
+                <div className="containerBtnCleanCart">
+                    <button className="btnCleanCart" onClick={() =>handlesTable() }>Vaciar carrito</button>
                 </div>
             :   
                 orderId === ""
@@ -75,24 +84,25 @@ const Cart = () =>
                     <p>Tu codigo de compras es: {orderId}</p>
                 </div>       
             }
-            {cartList.map(itemCardList => 
-                <div key={itemCardList.id} className="containerCartDetail">
-                    <div className="imgCartDetail">
-                        <img src={itemCardList.img} alt={`Imagen de ${itemCardList.nombre}`} />
-                    </div>
-                    <div className="cartDetail">
-                        <h4>{itemCardList.clase}</h4>
-                        <p><b>Nombre</b> {itemCardList.nombre}</p>
-                        <p><b>Cantidad</b> {itemCardList.cantidad}</p>
-                        <p><b>Precio</b> ${itemCardList.precio}</p>
-                        <p><b>Sub Total</b> ${()=> (itemCardList.precio * itemCardList.cantidad)}</p>
-                    </div>
-                    {/* <button className="btnRemoveItemCart" onClick={() => removeItemCart(itemCardList.id)}></button> */}
-                    <FaTrashAlt onClick={() => removeItemCart(itemCardList.id)} className="iconDelet"/>
-                </div> 
-                
-                
-                )
+            {   
+            
+                <table className="containerTable">
+                    <thead className={tableCart}>
+                            <th>Imagen</th><th>Nombre</th><th>Cantidad</th><th>Preio</th><th>Borrar</th>
+                    </thead>
+                    {cartList.map(itemCardList => 
+                        <tr key={itemCardList.id} className="containerCartDetail">
+                            <td className="tdImg"><img className="imgCartDetail" src={itemCardList.img} alt={`Imagen de ${itemCardList.nombre}`} /></td>
+                            <td className="tdNombre">{itemCardList.nombre}</td>
+                            <td className="tdCant">{itemCardList.cantidad}</td>
+                            <td className="tdPrecio">${itemCardList.precio}</td>
+                            <td className="tdIcon"><FaTrashAlt onClick={() => removeItemCart(itemCardList.id)} className="iconDelet"/></td>   
+                        </tr> 
+                        )
+                    }
+
+                </table>
+               
             }
             <hr />
              <div className="containerForm">

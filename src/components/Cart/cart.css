@@ -137,20 +137,83 @@
 }
 
 /* Estilos del detalle de carrito */
-.containerCartDetail
+hr
+{
+    width: 80%;
+    margin: 2rem auto 2rem auto;
+}
+.containerTable
+{
+    max-width: 1300px;
+    margin: auto auto ;
+    width: auto;
+    text-align: center;
+    background-color: white;
+    border-collapse: collapse;
+
+    font-family: "Quicksand";
+    font-size: 26px;
+    font-weight: 700;
+    border-radius: 10px;
+    
+}
+.containerTable >  thead
+{
+    background-color: #fe8306;
+
+}
+th, td{
+    border: solid 1px #fe8306;
+    padding: 10px;
+}
+.tdImg, .tdNombre, .tdCant, .tdPrecio, .tdIcon
+{
+    width: 200px;
+    height: 200px;
+
+}
+
+.imgCartDetail
+{
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+}
+.tdIcon .iconDelet
+{
+    font-size: 35px;
+    transition: all 0.2s ease-in-out;
+}
+.tdIcon .iconDelet:hover
+{
+    font-size: 40px;
+    color: rgb(212, 6, 6);
+}
+
+/* Boton Delet Cart */
+.containerBtnCleanCart
 {
     display: flex;
     flex-direction: row;
-    max-width: 1300px;
-    height: auto;
+    justify-content: center;
+
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    
 }
-.imgCartDetail
+.btnCleanCart
 {
-    width: 150px;
-    height: 200px;
+    padding: 20px;
+    background-color: red;
+    border-radius: 20px;
+    border: none;
+
+    font-family: "Quicksand";
+    font-size: 20px;
+    color: white;
 }
-.imgCartDetail > img
+.desactivado
 {
-    width: 100%;
-    height: auto;
+    display: none;
 }
