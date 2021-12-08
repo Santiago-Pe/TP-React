@@ -133,3 +133,30 @@
     {
         text-decoration: none;
     }
+
+.containerBtn
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.btnGoHome
+{
+    padding: 20px ;
+    border-radius: 50px;
+    background-color: #fe8306;
+    border: none;
+    color: white;
+    font-family: "Quicksand"; 
+    font-size: 30px;
+}
+.btnGoHome:hover
+{
+    padding: 20px ;
+    border-radius: 80px;
+    background-color: white;
+    border: none;
+    color: #fe8306;
+    font-size: 30px;
+}

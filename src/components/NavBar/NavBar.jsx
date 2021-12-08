@@ -2,7 +2,7 @@ import{Link} from "react-router-dom"
 import "./navBarCw.css"
 import { useCartContext } from "../../CartContext/CartContext"
 import { FaGlassCheers, FaShoppingCart} from "react-icons/fa";
-import ItemMainContainer from "../Container/ItemMainContainer/ItemMainContainer";
+
 
 
 
@@ -52,8 +52,14 @@ const NavBar = () =>
                         </div>
                     </Link>  
                 </nav>
+                <Link to="/inicio">
+                    <div className="containerBtn">
+                        <button className="btnGoHome">
+                            IR AL HOME
+                        </button>
+                    </div>
+                </Link>
             </header>
-            {/* <ItemMainContainer/> */}
         </>
     )
     

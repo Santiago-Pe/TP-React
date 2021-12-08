@@ -33,7 +33,7 @@ const Cart = () =>
         e.preventDefault()
         
             let order = {}
-            order.date = firebase.firestore.Timestamp.formDate(new Date());
+            // order.date = firebase.firestore.Timestamp.formDate(new Date());
             order.buyer =  formData;
             order.total = calculateTotalPriece();
             order.items= cartList.map(cartItem => 
