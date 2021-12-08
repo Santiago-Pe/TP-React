@@ -12,9 +12,5 @@
   flex-direction: row;
   flex-wrap: wrap;
   max-width: 1300px;
-  margin: auto auto;
-  
-
-
-
+  margin: 1rem  auto 2rem auto;
 }

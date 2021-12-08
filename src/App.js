@@ -11,9 +11,9 @@ function App()
     <>
       <CartContextProvider>
         <BrowserRouter>
-          <NavBar/>  
+          <NavBar/>
           <Switch>
-            <Route excat path="/inicio" component={ItemMainContainer}/>  
+            {/* <Route excat path="/inicio" component={ItemMainContainer}/>   */}
             <Route excat path="/categoria/:categoria" component={ItemListContainer}/>   
             <Route exact path="/detalle/:id" component={ItemDetailContainer}/>  
             <Route exact path="/cart" component={Cart}/>
