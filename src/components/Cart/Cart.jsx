@@ -16,10 +16,11 @@ const Cart = () =>
         {
             nombre: "",
             telefono: "",
-            email: ""
+            email: "",
+            emailConfirm: ""
         }
     )
-    const[tableCart, setTableCart] = useState("activo");
+    const[tableCart, setTableCart] = useState("desactivo");
 
 
     //FUNCIONES
@@ -33,7 +34,7 @@ const Cart = () =>
         e.preventDefault()
         
             let order = {}
-            // order.date = firebase.firestore.Timestamp.formDate(new Date());
+            order.date = firebase.firestore.Timestamp.formDate(new Date());
             order.buyer =  formData;
             order.total = calculateTotalPriece();
             order.items= cartList.map(cartItem => 
@@ -57,6 +58,17 @@ const Cart = () =>
             [e.target.name]: e.target.value
         })
     }
+    const emailValidation = () =>
+    {
+        if(formData.email === formData.emailConfirm)
+        {
+            creatOrder();
+        }
+        else
+        {
+            alert("Debe poner bien su correo electronico")
+        }
+    }
     
 
     console.log(formData)
@@ -79,9 +91,12 @@ const Cart = () =>
                     </Link>
                 </div>
             :  
-                <div>
-                    <p>Gracias por tu compra</p> 
-                    <p>Tu codigo de compras es: {orderId}</p>
+                <div className="purchaseCompleted">
+                    <section>
+                        <h3>Gracias por tu compra!</h3>
+                        <hr className="hrCart"/> 
+                        <p>Tu codigo de compras es: {orderId}</p>
+                    </section>
                 </div>       
             }
             {   
@@ -108,10 +123,11 @@ const Cart = () =>
              <div className="containerForm">
                 <h3>Completar los datos para finalizar la compra</h3>
                 <label>Total <span>${calculateTotalPriece()}</span></label> 
-                <form onChange={handleChange} onSubmit={creatOrder} className="formCart">
+                <form onChange={handleChange} onSubmit={emailValidation} className="formCart">
                     <input type="text" name="nombre" placeholder="Ingrese su nombre completo" value={formData.nombre} />
                     <input type="number" name="telefono" placeholder="Ingrese su numero de telefono" value={formData.telefono} />
                     <input type="email" name="email" placeholder="Ingrese su email (ejemplo@gmail.com)" value={formData.email}/>
+                    <input type='email' name='emailConfirm' placeholder='Confirmar email' value={formData.emailConfirm} required></input>
                     <button>Comprar</button>
                 </form>
             </div>    

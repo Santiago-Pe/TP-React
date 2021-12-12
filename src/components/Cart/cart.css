@@ -217,8 +217,34 @@ th, td{
 {
     display: none;
 }
+
 .cartDetail
 {
     display: flex;
     flex-direction: row;
+}
+
+/* Compra finalizada */
+
+.purchaseCompleted
+{
+    display: flex;
+    justify-content: center;
+
+    margin: 2rem;
+}
+
+.purchaseCompleted > section
+{
+    font-family: "Quicksand";
+    text-align: center;
+    font-weight: 600;
+
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+}
+h3
+{
+    font-size: 30px;
 }
