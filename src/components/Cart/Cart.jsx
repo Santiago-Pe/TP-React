@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useCartContext } from "../../CartContext/CartContext";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import {FaTrashAlt} from "react-icons/fa"
 import firebase from 'firebase';
 import 'firebase/firestore';
 import getFirestore from "../services/getFirestore";
 import "./cart.css"
+
 
 const Cart = () =>
 {
@@ -23,27 +25,29 @@ const Cart = () =>
 
 
     //FUNCIONES
-    const creatOrder = (e) => 
-    {
-        e.preventDefault()
+    const creatOrder = () => 
+    {   
         
-            let order = {}
-            order.date = firebase.firestore.Timestamp.formDate(new Date());
-            order.buyer =  formData;
-            order.total = calculateTotalPriece();
-            order.items= cartList.map(cartItem => 
-                {
-                    const id = cartItem.id;
-                    const nombre = cartItem.nombre;
-                    const precio = cartItem.precio;
-                    return{id, nombre, precio}
-                }
-            )
-        const dbQueryForm = getFirestore();
-        dbQueryForm.collection("orders").add(order)
-        .then(resp => setOrderId(resp.id))
-        .catch(err => alert('Error:', err))
-        .finally(() =>cleanCart())
+        let order = {}
+        order.date = firebase.firestore.Timestamp.fromDate(new Date());
+        order.buyer =  formData;
+        order.total = calculateTotalPriece();
+        order.items= cartList.map(cartItem => 
+            {
+                const id = cartItem.id;
+                const nombre = cartItem.nombre;
+                const precio = cartItem.precio;
+                return{id, nombre, precio}
+            }
+        )
+        
+        // const dbQuery = getFirestore();
+        // dbQuery.collection("orders").add(order)
+        // .then(resp => setOrderId(resp.id))
+        // .catch(err => alert('Error:', err))
+        // .finally(() =>cleanCart())
+    
+
     }
     const handleChange = (e) => 
     {
@@ -54,14 +58,19 @@ const Cart = () =>
     }
     const emailValidation = () =>
     {
-        if(formData.email === formData.emailConfirm)
-        {
-            creatOrder();
-        }
-        else
-        {
+        formData.email === formData.emailConfirm
+        ?
+            console.log("Email correcto")
+        
+        :
             alert("Debe poner bien su correo electronico")
-        }
+        
+    }
+    const sendFormulario = (e) =>
+    {
+        e.preventDefault()
+        emailValidation();
+        creatOrder();
     }
     
     return(
@@ -69,27 +78,27 @@ const Cart = () =>
             {cartList.length
             ?
                 <div className="containerBtnCleanCart">
-                    <button className="btnCleanCart" onClick={() =>cleanCart() }>Vaciar carrito</button>
+                    <button className="btnCleanCart" onClick={sendFormulario()}>Vaciar carrito</button>
                 </div>
             :   
                 orderId === ""
-            ?
-                <div className="containerEmptyCart">
-                    <h3>Carrito de compras</h3>
-                    <p>Ups! El carrito esta vacio :(</p>
-                    <p>Ve a ver nuestros productos</p>
-                    <Link to={"/categoria"}>
-                    <button className="btnSeeProd">Ver productos</button>
-                    </Link>
-                </div>
-            :  
-                <div className="purchaseCompleted">
-                    <section>
-                        <h3>Gracias por tu compra!</h3>
-                        <hr className="hrCart"/> 
-                        <p>Tu codigo de compras es: {orderId}</p>
-                    </section>
-                </div>       
+                    ?
+                    <div className="containerEmptyCart">
+                        <h3>Carrito de compras</h3>
+                        <p>Ups! El carrito esta vacio :(</p>
+                        <p>Ve a ver nuestros productos</p>
+                        <Link to={"/"}>
+                        <button className="btnSeeProd">Ver productos</button>
+                        </Link>
+                    </div> 
+                    :  
+                    <div className="purchaseCompleted">
+                        <section>
+                            <h3>Gracias por tu compra!</h3>
+                            <hr className="hrCart"/> 
+                            <p>Tu codigo de compras es: {orderId}</p>
+                        </section>
+                    </div>      
             }
             {   
                 <div className={contVisible}>
@@ -117,7 +126,7 @@ const Cart = () =>
                 <div className="containerForm">
                     <h3>Completar los datos para finalizar la compra</h3>
                     <label>Total <span>${calculateTotalPriece()}</span></label> 
-                    <form onChange={handleChange} onSubmit={emailValidation} className="formCart">
+                    <form onChange={handleChange} onSubmit={creatOrder()} className="formCart">
                         <input type="text" name="nombre" placeholder="Ingrese su nombre completo" value={formData.nombre} />
                         <input type="number" name="telefono" placeholder="Ingrese su numero de telefono" value={formData.telefono} />
                         <input type="email" name="email" placeholder="Ingrese su email (ejemplo@gmail.com)" value={formData.email}/>

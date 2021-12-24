@@ -5,6 +5,7 @@ import "./itemDetail.css"
 import { Link } from 'react-router-dom'
 
 
+
 const ItemDetail = ({productDetail}) =>
 {
     const [count, setCount] = useState(1); 
