@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 const ItemDetail = ({productDetail}) =>
 {
     const [count, setCount] = useState(1); 
-    const {addToCart} = useCartContext();
+    const {addToCart,activeCart} = useCartContext();
 
     
     //--- Funcion onAdd ---
@@ -21,6 +21,7 @@ const ItemDetail = ({productDetail}) =>
                         cantidad: cant,
                     }
                 );
+        activeCart();         
     }
     
     return(

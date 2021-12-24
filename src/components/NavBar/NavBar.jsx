@@ -27,7 +27,7 @@ const NavBar = () =>
                     <ul className = "boxNavbar">   
                         <div className = "navbarMain" >
                             <li><Link to={`/inicio`}>Inicio</Link></li>  
-                            <li><Link to={`/categoria`}>Productos</Link>
+                            <li><Link to={`/`}>Productos</Link>
                                 <ul className = "subNavbarMain">
                                     <div>
                                         <li><Link to={`/categoria/Vinos`}>Vinos</Link></li>

@@ -11,7 +11,7 @@ const Cart = () =>
 {
     //HOOKS
     const [orderId, setOrderId] = useState("");
-    const {cartList, removeItemCart, cleanCart, calculateTotalPriece} = useCartContext();
+    const {cartList, removeItemCart, cleanCart, calculateTotalPriece, contVisible} = useCartContext();
     const [formData, setFormData] = useState(
         {
             nombre: "",
@@ -20,15 +20,9 @@ const Cart = () =>
             emailConfirm: ""
         }
     )
-    const[tableCart, setTableCart] = useState("desactivo");
 
 
     //FUNCIONES
-    const handlesTable = () =>
-    {
-        setTableCart("desactivado");
-        cleanCart();
-    }
     const creatOrder = (e) => 
     {
         e.preventDefault()
@@ -70,14 +64,12 @@ const Cart = () =>
         }
     }
     
-
-    console.log(formData)
     return(
         <div className="containerCart">
             {cartList.length
             ?
                 <div className="containerBtnCleanCart">
-                    <button className="btnCleanCart" onClick={() =>handlesTable() }>Vaciar carrito</button>
+                    <button className="btnCleanCart" onClick={() =>cleanCart() }>Vaciar carrito</button>
                 </div>
             :   
                 orderId === ""
@@ -100,38 +92,40 @@ const Cart = () =>
                 </div>       
             }
             {   
-            
-                <table className="containerTable">
-                    <thead className={tableCart}>
-                            <th>Imagen</th><th>Nombre</th><th>Cantidad</th><th>Preio</th><th>Borrar</th>
-                    </thead>
-                    {cartList.map(itemCardList => 
-                        <tr key={itemCardList.id} className="containerCartDetail">
-                            <td className="tdImg"><img className="imgCartDetail" src={itemCardList.img} alt={`Imagen de ${itemCardList.nombre}`} /></td>
-                            <td className="tdNombre">{itemCardList.nombre}</td>
-                            <td className="tdCant">{itemCardList.cantidad}</td>
-                            <td className="tdPrecio">${itemCardList.precio}</td>
-                            <td className="tdIcon"><FaTrashAlt onClick={() => removeItemCart(itemCardList.id)} className="iconDelet"/></td>   
-                        </tr> 
-                        )
-                    }
+                <div className={contVisible}>
+                    <table className="containerTable">
+                        <thead >
+                                <th>Imagen</th><th>Nombre</th><th>Cantidad</th><th>Preio</th><th>Borrar</th>
+                        </thead>
+                        {cartList.map(itemCardList => 
+                            <tr key={itemCardList.id} className="containerCartDetail">
+                                <td className="tdImg"><img className="imgCartDetail" src={itemCardList.img} alt={`Imagen de ${itemCardList.nombre}`} /></td>
+                                <td className="tdNombre">{itemCardList.nombre}</td>
+                                <td className="tdCant">{itemCardList.cantidad}</td>
+                                <td className="tdPrecio">${itemCardList.precio}</td>
+                                <td className="tdIcon"><FaTrashAlt onClick={() => removeItemCart(itemCardList.id)} className="iconDelet"/></td>   
+                            </tr> 
+                            )
+                        }
 
-                </table>
+                    </table>
+                </div>
                
             }
-            <hr />
-             <div className="containerForm">
-                <h3>Completar los datos para finalizar la compra</h3>
-                <label>Total <span>${calculateTotalPriece()}</span></label> 
-                <form onChange={handleChange} onSubmit={emailValidation} className="formCart">
-                    <input type="text" name="nombre" placeholder="Ingrese su nombre completo" value={formData.nombre} />
-                    <input type="number" name="telefono" placeholder="Ingrese su numero de telefono" value={formData.telefono} />
-                    <input type="email" name="email" placeholder="Ingrese su email (ejemplo@gmail.com)" value={formData.email}/>
-                    <input type='email' name='emailConfirm' placeholder='Confirmar email' value={formData.emailConfirm} required></input>
-                    <button>Comprar</button>
-                </form>
-            </div>    
-           
+            <div className={contVisible}>
+                <hr />
+                <div className="containerForm">
+                    <h3>Completar los datos para finalizar la compra</h3>
+                    <label>Total <span>${calculateTotalPriece()}</span></label> 
+                    <form onChange={handleChange} onSubmit={emailValidation} className="formCart">
+                        <input type="text" name="nombre" placeholder="Ingrese su nombre completo" value={formData.nombre} />
+                        <input type="number" name="telefono" placeholder="Ingrese su numero de telefono" value={formData.telefono} />
+                        <input type="email" name="email" placeholder="Ingrese su email (ejemplo@gmail.com)" value={formData.email}/>
+                        <input type='email' name='emailConfirm' placeholder='Confirmar email' value={formData.emailConfirm} required></input>
+                        <button>Comprar</button>
+                    </form>
+                </div>
+            </div>        
         </div>
     )
 }

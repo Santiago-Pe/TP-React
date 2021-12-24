@@ -6,7 +6,17 @@ export const useCartContext = () => useContext(CartContext)
 const CartContextProvider = ({children}) =>
 {
     const [cartList, setCartList] = useState([]);//Array
+    const[contVisible, setContVisible] = useState("desactivado");//Formulario visible o no
 
+
+    const activeCart = () =>
+    {
+        setContVisible("activado"); 
+    }
+    const desactiveCart = () =>
+    {
+        setContVisible("desactivado"); 
+    }
     //Agregar al carrito
     const addToCart = itemsAdded =>
     {
@@ -33,7 +43,8 @@ const CartContextProvider = ({children}) =>
     //Limpiar carrito
     const cleanCart = () =>
     {
-        setCartList([]); 
+        setCartList([]);
+        desactiveCart(); 
     }
     //Acumulador precios
     const calculateTotalPriece = () =>
@@ -51,6 +62,9 @@ const CartContextProvider = ({children}) =>
 
     return(
         <CartContext.Provider value={{
+            contVisible,
+            activeCart,
+            desactiveCart,
             cartList, 
             addToCart, 
             removeItemCart, 

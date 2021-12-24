@@ -13,8 +13,11 @@ function App()
         <BrowserRouter>
           <NavBar/>
           <Switch>
-            <Route excat path="/inicio" component={ItemMainContainer}/>  
-            <Route excat path="/categoria/:categoria" component={ItemListContainer}/>   
+            <Route excat path="/inicio" component={ItemMainContainer}/> 
+            <Route exact path="/">
+              <ItemListContainer/>
+            </Route>
+            <Route excat path="/categoria/:categoria" component={ItemListContainer}/>
             <Route exact path="/detalle/:id" component={ItemDetailContainer}/>  
             <Route exact path="/cart" component={Cart}/>
           </Switch>  

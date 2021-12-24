@@ -13,8 +13,11 @@ const ItemListContainer = (props) =>
     useEffect(()=>
     {  
         const db = getFirestore();
-        const dbQuery = categoria ? db.collection("items").where("categoria", "==", categoria).get() : db.collection('items').get();
-        dbQuery
+        const dbQuery = categoria
+        ? db.collection("items").where("categoria", "==", categoria)
+        : db.collection("items")
+
+        dbQuery.get()
         .then(resp => setProducts(resp.docs.map(prod => ({id: prod.id, ...prod.data()}) )) )
         .catch(err => alert(`Error: ${err}` ))
         .finally(() => setLoadingItemContainer(false));
